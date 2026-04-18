@@ -50,21 +50,14 @@ class FinderSync: FIFinderSync {
 
     @objc func copyRelativePath(_ sender: AnyObject?) {
         guard let items = FIFinderSyncController.default().selectedItemURLs(), !items.isEmpty else { return }
-        guard let targetURL = FIFinderSyncController.default().targetedURL() else {
-            // Fallback: copy absolute path if we can't determine the container
-            copyAbsolutePath(sender)
-            return
-        }
 
-        let basePath = targetURL.path
+        let homeDir = NSHomeDirectory()
         let paths = items.map { itemURL -> String in
             let itemPath = itemURL.path
-            if itemPath.hasPrefix(basePath) {
-                var relative = String(itemPath.dropFirst(basePath.count))
-                if relative.hasPrefix("/") {
-                    relative = String(relative.dropFirst())
-                }
-                return relative.isEmpty ? itemURL.lastPathComponent : relative
+            if itemPath.hasPrefix(homeDir + "/") {
+                return "~/" + String(itemPath.dropFirst(homeDir.count + 1))
+            } else if itemPath == homeDir {
+                return "~"
             }
             return itemPath
         }

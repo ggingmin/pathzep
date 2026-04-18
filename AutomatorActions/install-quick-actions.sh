@@ -339,26 +339,15 @@ cat > "$RELATIVE_ACTION/Contents/document.wflow" << 'WFLOW'
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string># Get the Finder's current folder via AppleScript
-FINDER_DIR=$(osascript -e 'tell application "Finder" to get POSIX path of (insertion location as alias)' 2>/dev/null)
-
-# Remove trailing slash from FINDER_DIR
-FINDER_DIR="${FINDER_DIR%/}"
-
-result=""
-for f in "$@"; do
-    # Try to make path relative to the Finder's current directory
-    if [ -n "$FINDER_DIR" ] &amp;&amp; [[ "$f" == "$FINDER_DIR"/* ]]; then
-        rel="${f#$FINDER_DIR/}"
-        result="${result}${rel}\n"
+					<string>for f in "$@"; do
+    if [[ "$f" == "$HOME"/* ]]; then
+        echo "~/${f#$HOME/}"
+    elif [[ "$f" == "$HOME" ]]; then
+        echo "~"
     else
-        # Fallback: just use the filename
-        result="${result}$(basename "$f")\n"
+        echo "$f"
     fi
-done
-
-# Remove trailing newline and copy to clipboard
-printf "%b" "$result" | sed '$ s/\\n$//' | /usr/bin/pbcopy</string>
+done | /usr/bin/pbcopy</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -526,7 +515,7 @@ echo ""
 echo "📋 사용법:"
 echo "  Finder에서 파일/폴더를 우클릭 → 빠른 동작(Quick Actions) →"
 echo "    • '절대 경로 복사' — 전체 경로를 클립보드에 복사"
-echo "    • '상대 경로 복사' — 현재 Finder 폴더 기준 상대 경로를 복사"
+echo "    • '상대 경로 복사' — ~/로 시작하는 홈 디렉토리 기준 경로를 복사"
 echo ""
 echo "⌨️  단축키 설정 방법:"
 echo "  시스템 설정 → 키보드 → 키보드 단축키 → 서비스 → 파일 및 폴더"
