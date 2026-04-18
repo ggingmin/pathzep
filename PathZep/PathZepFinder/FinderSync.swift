@@ -51,7 +51,8 @@ class FinderSync: FIFinderSync {
     @objc func copyRelativePath(_ sender: AnyObject?) {
         guard let items = FIFinderSyncController.default().selectedItemURLs(), !items.isEmpty else { return }
 
-        let homeDir = NSHomeDirectory()
+        // NSHomeDirectory() returns sandbox container in extensions, so use passwd entry
+        let homeDir = NSHomeDirectoryForUser(NSUserName()) ?? NSHomeDirectory()
         let paths = items.map { itemURL -> String in
             let itemPath = itemURL.path
             if itemPath.hasPrefix(homeDir + "/") {
