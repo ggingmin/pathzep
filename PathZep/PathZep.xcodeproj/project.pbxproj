@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A10000010000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* AppDelegate.swift */; };
-		A10000020000000000000002 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000020000000000000002 /* ViewController.swift */; };
+		A10000080000000000000008 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000B000000000000011 /* StatusBarController.swift */; };
+		A10000090000000000000009 /* ShortcutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000C000000000000012 /* ShortcutSettingsViewController.swift */; };
 		A10000030000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000030000000000000003 /* Assets.xcassets */; };
 		A10000050000000000000005 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000050000000000000005 /* FinderSync.swift */; };
 		A10000060000000000000006 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000060000000000000006 /* FinderSync.framework */; };
@@ -41,7 +42,8 @@
 
 /* Begin PBXFileReference section */
 		A20000010000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A20000020000000000000002 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2000000B000000000000011 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		A2000000C000000000000012 /* ShortcutSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSettingsViewController.swift; sourceTree = "<group>"; };
 		A20000030000000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20000050000000000000005 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		A20000060000000000000006 /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
@@ -86,7 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				A20000010000000000000001 /* AppDelegate.swift */,
-				A20000020000000000000002 /* ViewController.swift */,
+				A2000000B000000000000011 /* StatusBarController.swift */,
+				A2000000C000000000000012 /* ShortcutSettingsViewController.swift */,
 				A20000030000000000000003 /* Assets.xcassets */,
 				A20000070000000000000007 /* Info.plist */,
 				A20000080000000000000008 /* PathZep.entitlements */,
@@ -222,7 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000010000000000000001 /* AppDelegate.swift in Sources */,
-				A10000020000000000000002 /* ViewController.swift in Sources */,
+				A10000080000000000000008 /* StatusBarController.swift in Sources */,
+				A10000090000000000000009 /* ShortcutSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
