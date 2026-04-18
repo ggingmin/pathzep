@@ -17,7 +17,7 @@ class FinderSync: FIFinderSync {
         // Watch the entire filesystem so the context menu appears everywhere
         let rootURL = URL(fileURLWithPath: "/")
         FIFinderSyncController.default().directoryURLs = [rootURL]
-        NSLog("PathZepFinder: realHomeDir = \(realHomeDir)")
+
     }
 
     // MARK: - Context Menu
@@ -61,7 +61,6 @@ class FinderSync: FIFinderSync {
         guard let items = FIFinderSyncController.default().selectedItemURLs(), !items.isEmpty else { return }
 
         let homeDir = realHomeDir
-        NSLog("PathZepFinder: homeDir=[\(homeDir)] firstItem=[\(items.first?.path ?? "nil")]")
         let paths = items.map { itemURL -> String in
             let itemPath = itemURL.path
             if itemPath.hasPrefix(homeDir + "/") {
