@@ -3,12 +3,21 @@ import FinderSync
 
 class FinderSync: FIFinderSync {
 
+    /// Real user home directory, bypassing sandbox container redirection.
+    private let realHomeDir: String = {
+        if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
+            return String(cString: home)
+        }
+        return "/Users/" + NSUserName()
+    }()
+
     override init() {
         super.init()
 
         // Watch the entire filesystem so the context menu appears everywhere
         let rootURL = URL(fileURLWithPath: "/")
         FIFinderSyncController.default().directoryURLs = [rootURL]
+        NSLog("PathZepFinder: realHomeDir = \(realHomeDir)")
     }
 
     // MARK: - Context Menu
@@ -51,8 +60,8 @@ class FinderSync: FIFinderSync {
     @objc func copyRelativePath(_ sender: AnyObject?) {
         guard let items = FIFinderSyncController.default().selectedItemURLs(), !items.isEmpty else { return }
 
-        // NSHomeDirectory() returns sandbox container in extensions, so use passwd entry
-        let homeDir = NSHomeDirectoryForUser(NSUserName()) ?? NSHomeDirectory()
+        let homeDir = realHomeDir
+        NSLog("PathZepFinder: homeDir=[\(homeDir)] firstItem=[\(items.first?.path ?? "nil")]")
         let paths = items.map { itemURL -> String in
             let itemPath = itemURL.path
             if itemPath.hasPrefix(homeDir + "/") {
