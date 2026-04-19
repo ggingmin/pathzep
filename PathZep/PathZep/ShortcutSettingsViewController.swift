@@ -321,6 +321,7 @@ class ShortcutRecorderField: NSView {
 
     private var isRecording = false
     private let label = NSTextField(labelWithString: "")
+    private var localMonitor: Any?
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -330,6 +331,10 @@ class ShortcutRecorderField: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+    }
+
+    deinit {
+        stopMonitoring()
     }
 
     private func setup() {
@@ -356,36 +361,6 @@ class ShortcutRecorderField: NSView {
     }
 
     override var acceptsFirstResponder: Bool { true }
-    override var canBecomeKeyView: Bool { true }
-
-    override func mouseDown(with event: NSEvent) {
-        window?.makeFirstResponder(self)
-        isRecording = true
-        label.stringValue = "Press a key combination…"
-        label.textColor = .secondaryLabelColor
-        layer?.borderColor = NSColor.controlAccentColor.cgColor
-    }
-
-    override func becomeFirstResponder() -> Bool {
-        let result = super.becomeFirstResponder()
-        if result {
-            layer?.borderColor = NSColor.controlAccentColor.cgColor
-        }
-        return result
-    }
-
-    override func resignFirstResponder() -> Bool {
-        let result = super.resignFirstResponder()
-        if result {
-            isRecording = false
-            layer?.borderColor = NSColor.separatorColor.cgColor
-            if label.stringValue == "Press a key combination…" {
-                label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
-                label.textColor = .labelColor
-            }
-        }
-        return result
-    }
 
     // Modifier-only key codes to ignore
     private static let modifierKeyCodes: Set<UInt16> = [
@@ -397,35 +372,66 @@ class ShortcutRecorderField: NSView {
         63,      // fn
     ]
 
-    override func keyDown(with event: NSEvent) {
-        guard isRecording else { return }
-
-        // Ignore modifier-only key presses
-        guard !Self.modifierKeyCodes.contains(event.keyCode) else { return }
-
-        let mods = event.modifierFlags.intersection([.command, .option, .control, .shift])
-
-        // Require at least one modifier
-        guard !mods.isEmpty else {
-            // ESC cancels recording
-            if event.keyCode == 53 {
-                isRecording = false
-                label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
-                label.textColor = .labelColor
-                layer?.borderColor = NSColor.separatorColor.cgColor
-            }
-            return
-        }
-
-        let keyCode = UInt32(event.keyCode)
-        setShortcut(keyCode: keyCode, modifiers: mods)
-        isRecording = false
-        layer?.borderColor = NSColor.separatorColor.cgColor
-        onShortcutChanged?()
+    override func mouseDown(with event: NSEvent) {
+        window?.makeFirstResponder(self)
+        startRecording()
     }
 
-    override func flagsChanged(with event: NSEvent) {
-        // Ignore standalone modifier key presses
+    private func startRecording() {
+        isRecording = true
+        label.stringValue = "Press a key combination…"
+        label.textColor = .secondaryLabelColor
+        layer?.borderColor = NSColor.controlAccentColor.cgColor
+        startMonitoring()
+    }
+
+    private func stopRecording() {
+        isRecording = false
+        layer?.borderColor = NSColor.separatorColor.cgColor
+        if label.stringValue == "Press a key combination…" {
+            label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
+            label.textColor = .labelColor
+        }
+        stopMonitoring()
+    }
+
+    private func startMonitoring() {
+        stopMonitoring()
+        localMonitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown, .flagsChanged]) { [weak self] event in
+            guard let self = self, self.isRecording else { return event }
+
+            if event.type == .flagsChanged {
+                // Ignore standalone modifier presses
+                return event
+            }
+
+            // Ignore modifier-only key codes
+            guard !Self.modifierKeyCodes.contains(event.keyCode) else { return event }
+
+            let mods = event.modifierFlags.intersection([.command, .option, .control, .shift])
+
+            // Require at least one modifier
+            guard !mods.isEmpty else {
+                // ESC cancels recording
+                if event.keyCode == 53 {
+                    self.stopRecording()
+                }
+                return nil // swallow the event
+            }
+
+            let keyCode = UInt32(event.keyCode)
+            self.setShortcut(keyCode: keyCode, modifiers: mods)
+            self.stopRecording()
+            self.onShortcutChanged?()
+            return nil // swallow the event
+        }
+    }
+
+    private func stopMonitoring() {
+        if let monitor = localMonitor {
+            NSEvent.removeMonitor(monitor)
+            localMonitor = nil
+        }
     }
 
     func setShortcut(keyCode: UInt32, modifiers: NSEvent.ModifierFlags) {
@@ -438,8 +444,7 @@ class ShortcutRecorderField: NSView {
         recordedShortcut = nil
         label.stringValue = ""
         label.textColor = .labelColor
-        isRecording = false
-        layer?.borderColor = NSColor.separatorColor.cgColor
+        stopRecording()
     }
 
     private func shortcutDisplayString(keyCode: UInt32, modifiers: NSEvent.ModifierFlags) -> String {
