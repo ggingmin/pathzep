@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "نسخ المسار المطلق";
+"finder.copy_relative_path" = "نسخ المسار النسبي";

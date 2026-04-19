@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "Salin Jalur Absolut";
+"finder.copy_relative_path" = "Salin Jalur Relatif";

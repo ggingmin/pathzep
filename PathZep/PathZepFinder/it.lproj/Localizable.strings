@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "Copia percorso assoluto";
+"finder.copy_relative_path" = "Copia percorso relativo";

@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "ตั้งค่าปุ่มลัด…";
+"menu.quit" = "ออกจาก PathZep";
+"window.shortcut_settings_title" = "ตั้งค่าปุ่มลัด PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "ตั้งค่าปุ่มลัด";
+"settings.copy_absolute_path" = "คัดลอกเส้นทางแบบสัมบูรณ์:";
+"settings.copy_relative_path" = "คัดลอกเส้นทางแบบสัมพัทธ์:";
+"settings.click_to_set" = "คลิกเพื่อตั้งค่าปุ่มลัด";
+"settings.clear" = "ล้าง";
+"settings.hint" = "คลิกที่ช่องแล้วกดคีย์ลัดที่ต้องการ\nปุ่มลัดส่วนกลางใช้งานได้จากทุกแอป";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "กดคีย์ผสม…";

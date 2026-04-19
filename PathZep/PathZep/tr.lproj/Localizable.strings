@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Kısayol Ayarları…";
+"menu.quit" = "PathZep'ten Çık";
+"window.shortcut_settings_title" = "PathZep — Kısayol Ayarları";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Kısayol Ayarları";
+"settings.copy_absolute_path" = "Mutlak Yolu Kopyala:";
+"settings.copy_relative_path" = "Göreli Yolu Kopyala:";
+"settings.click_to_set" = "Kısayol belirlemek için tıklayın";
+"settings.clear" = "Temizle";
+"settings.hint" = "Bir alana tıklayın ve istediğiniz tuş kombinasyonuna basın.\nGenel kısayollar her uygulamadan çalışır.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Bir tuş kombinasyonuna basın…";

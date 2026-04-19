@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Pengaturan Pintasan…";
+"menu.quit" = "Keluar dari PathZep";
+"window.shortcut_settings_title" = "Pengaturan Pintasan PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Pengaturan Pintasan";
+"settings.copy_absolute_path" = "Salin Jalur Absolut:";
+"settings.copy_relative_path" = "Salin Jalur Relatif:";
+"settings.click_to_set" = "Klik untuk mengatur pintasan";
+"settings.clear" = "Hapus";
+"settings.hint" = "Klik pada kolom dan tekan kombinasi tombol yang diinginkan.\nPintasan global berfungsi dari aplikasi mana pun.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Tekan kombinasi tombol…";

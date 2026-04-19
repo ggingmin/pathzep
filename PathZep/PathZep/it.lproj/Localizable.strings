@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Impostazioni scorciatoie…";
+"menu.quit" = "Esci da PathZep";
+"window.shortcut_settings_title" = "Impostazioni scorciatoie di PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Impostazioni scorciatoie";
+"settings.copy_absolute_path" = "Copia percorso assoluto:";
+"settings.copy_relative_path" = "Copia percorso relativo:";
+"settings.click_to_set" = "Fai clic per impostare la scorciatoia";
+"settings.clear" = "Cancella";
+"settings.hint" = "Fai clic su un campo e premi la combinazione di tasti desiderata.\nLe scorciatoie globali funzionano da qualsiasi app.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Premi una combinazione di tasti…";

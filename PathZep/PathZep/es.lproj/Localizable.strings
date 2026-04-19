@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Ajustes de atajos…";
+"menu.quit" = "Salir de PathZep";
+"window.shortcut_settings_title" = "Ajustes de atajos de PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Ajustes de atajos";
+"settings.copy_absolute_path" = "Copiar ruta absoluta:";
+"settings.copy_relative_path" = "Copiar ruta relativa:";
+"settings.click_to_set" = "Haz clic para asignar un atajo";
+"settings.clear" = "Borrar";
+"settings.hint" = "Haz clic en un campo y pulsa la combinación de teclas deseada.\nLos atajos globales funcionan desde cualquier app.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Pulsa una combinación de teclas…";

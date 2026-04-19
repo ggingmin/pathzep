@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "快捷鍵設定…";
+"menu.quit" = "結束 PathZep";
+"window.shortcut_settings_title" = "PathZep 快捷鍵設定";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "快捷鍵設定";
+"settings.copy_absolute_path" = "拷貝絕對路徑:";
+"settings.copy_relative_path" = "拷貝相對路徑:";
+"settings.click_to_set" = "點按以設定快捷鍵";
+"settings.clear" = "清除";
+"settings.hint" = "點按輸入欄位，然後按下您想要的快捷鍵組合。\n全域快捷鍵可在任何應用程式中使用。";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "請按下快捷鍵組合…";

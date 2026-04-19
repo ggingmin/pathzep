@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "絶対パスをコピー";
+"finder.copy_relative_path" = "相対パスをコピー";

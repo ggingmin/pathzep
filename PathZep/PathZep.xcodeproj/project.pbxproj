@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1000000D000000000000013 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000D000000000000013 /* main.swift */; };
+		A1000000E000000000000014 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000E000000000000014 /* Localizable.strings */; };
+		A1000000F000000000000015 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000F000000000000015 /* Localizable.strings */; };
+		A1000000G000000000000016 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000G000000000000016 /* InfoPlist.strings */; };
 		A10000010000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* AppDelegate.swift */; };
 		A10000030000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000030000000000000003 /* Assets.xcassets */; };
 		A10000050000000000000005 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000050000000000000005 /* FinderSync.swift */; };
 		A10000060000000000000006 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000060000000000000006 /* FinderSync.framework */; };
 		A10000070000000000000007 /* PathZepFinder.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A30000020000000000000002 /* PathZepFinder.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10000080000000000000008 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000B000000000000011 /* StatusBarController.swift */; };
-		A1000000D000000000000013 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000D000000000000013 /* main.swift */; };
 		A10000090000000000000009 /* ShortcutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000C000000000000012 /* ShortcutSettingsViewController.swift */; };
-		A1000000E000000000000014 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000E000000000000014 /* Localizable.strings */; };
-		A1000000F000000000000015 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000F000000000000015 /* Localizable.strings */; };
-		A1000000G000000000000016 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000000G000000000000016 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,69 @@
 		A2000000B000000000000011 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		A2000000C000000000000012 /* ShortcutSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSettingsViewController.swift; sourceTree = "<group>"; };
 		A2000000D000000000000013 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A2000000E100000000000014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E200000000000014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E300000000000014 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E400000000000014 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000E500000000000014 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000E600000000000014 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E700000000000014 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E800000000000014 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000E900000000000014 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000EA00000000000014 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EB00000000000014 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EC00000000000014 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000ED00000000000014 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EE00000000000014 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EF00000000000014 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EG00000000000014 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EH00000000000014 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EI00000000000014 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EJ00000000000014 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EK00000000000014 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000EL00000000000014 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F100000000000015 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F200000000000015 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F300000000000015 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F400000000000015 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000F500000000000015 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000F600000000000015 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F700000000000015 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F800000000000015 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000F900000000000015 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000000FA00000000000015 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FB00000000000015 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FC00000000000015 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FD00000000000015 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FE00000000000015 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FF00000000000015 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FG00000000000015 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FH00000000000015 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FI00000000000015 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FJ00000000000015 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FK00000000000015 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000FL00000000000015 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000000G100000000000016 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G200000000000016 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G300000000000016 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G400000000000016 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A2000000G500000000000016 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A2000000G600000000000016 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G700000000000016 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G800000000000016 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000G900000000000016 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A2000000GA00000000000016 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GB00000000000016 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GC00000000000016 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GD00000000000016 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GE00000000000016 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GF00000000000016 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GG00000000000016 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GH00000000000016 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GI00000000000016 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GJ00000000000016 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GK00000000000016 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2000000GL00000000000016 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A20000010000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20000030000000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20000050000000000000005 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
@@ -58,43 +121,7 @@
 		A20000090000000000000009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30000010000000000000001 /* PathZep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathZep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30000020000000000000002 /* PathZepFinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PathZepFinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2000000E100000000000014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A2000000E200000000000014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A2000000F100000000000015 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A2000000F200000000000015 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A2000000G100000000000016 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A2000000G200000000000016 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXVariantGroup section */
-		A2000000E000000000000014 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2000000E100000000000014 /* en */,
-				A2000000E200000000000014 /* ko */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		A2000000F000000000000015 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2000000F100000000000015 /* en */,
-				A2000000F200000000000015 /* ko */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		A2000000G000000000000016 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2000000G100000000000016 /* en */,
-				A2000000G200000000000016 /* ko */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A80000010000000000000001 /* Frameworks */ = {
@@ -234,6 +261,25 @@
 				en,
 				ko,
 				Base,
+				ja,
+				"zh-Hans",
+				"zh-Hant",
+				es,
+				fr,
+				de,
+				"pt-BR",
+				ru,
+				ar,
+				hi,
+				it,
+				th,
+				vi,
+				id,
+				tr,
+				nl,
+				pl,
+				uk,
+				sv,
 			);
 			mainGroup = A90000010000000000000001;
 			productRefGroup = A90000050000000000000005 /* Products */;
@@ -296,6 +342,93 @@
 			targetProxy = A40000010000000000000001 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A2000000E000000000000014 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2000000E100000000000014 /* en */,
+				A2000000E200000000000014 /* ko */,
+				A2000000E300000000000014 /* ja */,
+				A2000000E400000000000014 /* zh-Hans */,
+				A2000000E500000000000014 /* zh-Hant */,
+				A2000000E600000000000014 /* es */,
+				A2000000E700000000000014 /* fr */,
+				A2000000E800000000000014 /* de */,
+				A2000000E900000000000014 /* pt-BR */,
+				A2000000EA00000000000014 /* ru */,
+				A2000000EB00000000000014 /* ar */,
+				A2000000EC00000000000014 /* hi */,
+				A2000000ED00000000000014 /* it */,
+				A2000000EE00000000000014 /* th */,
+				A2000000EF00000000000014 /* vi */,
+				A2000000EG00000000000014 /* id */,
+				A2000000EH00000000000014 /* tr */,
+				A2000000EI00000000000014 /* nl */,
+				A2000000EJ00000000000014 /* pl */,
+				A2000000EK00000000000014 /* uk */,
+				A2000000EL00000000000014 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A2000000F000000000000015 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2000000F100000000000015 /* en */,
+				A2000000F200000000000015 /* ko */,
+				A2000000F300000000000015 /* ja */,
+				A2000000F400000000000015 /* zh-Hans */,
+				A2000000F500000000000015 /* zh-Hant */,
+				A2000000F600000000000015 /* es */,
+				A2000000F700000000000015 /* fr */,
+				A2000000F800000000000015 /* de */,
+				A2000000F900000000000015 /* pt-BR */,
+				A2000000FA00000000000015 /* ru */,
+				A2000000FB00000000000015 /* ar */,
+				A2000000FC00000000000015 /* hi */,
+				A2000000FD00000000000015 /* it */,
+				A2000000FE00000000000015 /* th */,
+				A2000000FF00000000000015 /* vi */,
+				A2000000FG00000000000015 /* id */,
+				A2000000FH00000000000015 /* tr */,
+				A2000000FI00000000000015 /* nl */,
+				A2000000FJ00000000000015 /* pl */,
+				A2000000FK00000000000015 /* uk */,
+				A2000000FL00000000000015 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A2000000G000000000000016 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2000000G100000000000016 /* en */,
+				A2000000G200000000000016 /* ko */,
+				A2000000G300000000000016 /* ja */,
+				A2000000G400000000000016 /* zh-Hans */,
+				A2000000G500000000000016 /* zh-Hant */,
+				A2000000G600000000000016 /* es */,
+				A2000000G700000000000016 /* fr */,
+				A2000000G800000000000016 /* de */,
+				A2000000G900000000000016 /* pt-BR */,
+				A2000000GA00000000000016 /* ru */,
+				A2000000GB00000000000016 /* ar */,
+				A2000000GC00000000000016 /* hi */,
+				A2000000GD00000000000016 /* it */,
+				A2000000GE00000000000016 /* th */,
+				A2000000GF00000000000016 /* vi */,
+				A2000000GG00000000000016 /* id */,
+				A2000000GH00000000000016 /* tr */,
+				A2000000GI00000000000016 /* nl */,
+				A2000000GJ00000000000016 /* pl */,
+				A2000000GK00000000000016 /* uk */,
+				A2000000GL00000000000016 /* sv */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD0000010000000000000001 /* Debug */ = {
@@ -424,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pathzep.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -450,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pathzep.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -472,7 +605,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pathzep.app.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -495,7 +628,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pathzep.app.finder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

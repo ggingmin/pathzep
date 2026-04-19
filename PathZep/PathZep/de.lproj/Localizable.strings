@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Kurzbefehl-Einstellungen …";
+"menu.quit" = "PathZep beenden";
+"window.shortcut_settings_title" = "PathZep Kurzbefehl-Einstellungen";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Kurzbefehl-Einstellungen";
+"settings.copy_absolute_path" = "Absoluten Pfad kopieren:";
+"settings.copy_relative_path" = "Relativen Pfad kopieren:";
+"settings.click_to_set" = "Klicken, um Kurzbefehl festzulegen";
+"settings.clear" = "Löschen";
+"settings.hint" = "Klicke auf ein Feld und drücke die gewünschte Tastenkombination.\nGlobale Kurzbefehle funktionieren aus jeder App heraus.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Tastenkombination drücken …";

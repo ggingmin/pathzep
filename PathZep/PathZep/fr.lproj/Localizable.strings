@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Réglages des raccourcis…";
+"menu.quit" = "Quitter PathZep";
+"window.shortcut_settings_title" = "Réglages des raccourcis PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Réglages des raccourcis";
+"settings.copy_absolute_path" = "Copier le chemin absolu :";
+"settings.copy_relative_path" = "Copier le chemin relatif :";
+"settings.click_to_set" = "Cliquez pour définir un raccourci";
+"settings.clear" = "Effacer";
+"settings.hint" = "Cliquez sur un champ et appuyez sur la combinaison de touches souhaitée.\nLes raccourcis globaux fonctionnent depuis n'importe quelle app.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Appuyez sur une combinaison de touches…";

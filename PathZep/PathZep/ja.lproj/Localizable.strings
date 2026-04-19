@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "ショートカット設定…";
+"menu.quit" = "PathZep を終了";
+"window.shortcut_settings_title" = "PathZep ショートカット設定";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "ショートカット設定";
+"settings.copy_absolute_path" = "絶対パスをコピー:";
+"settings.copy_relative_path" = "相対パスをコピー:";
+"settings.click_to_set" = "クリックしてショートカットを設定";
+"settings.clear" = "クリア";
+"settings.hint" = "フィールドをクリックして、使用したいショートカットキーを押してください。\nグローバルショートカットはどのアプリからでも使用できます。";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "キーの組み合わせを押してください…";

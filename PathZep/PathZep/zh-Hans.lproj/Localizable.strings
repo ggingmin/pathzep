@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "快捷键设置…";
+"menu.quit" = "退出 PathZep";
+"window.shortcut_settings_title" = "PathZep 快捷键设置";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "快捷键设置";
+"settings.copy_absolute_path" = "复制绝对路径:";
+"settings.copy_relative_path" = "复制相对路径:";
+"settings.click_to_set" = "点击以设置快捷键";
+"settings.clear" = "清除";
+"settings.hint" = "点击输入框，然后按下您想要的快捷键组合。\n全局快捷键可在任何应用中使用。";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "请按下快捷键组合…";

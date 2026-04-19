@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "คัดลอกเส้นทางแบบสัมบูรณ์";
+"finder.copy_relative_path" = "คัดลอกเส้นทางแบบสัมพัทธ์";

@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "إعدادات الاختصارات…";
+"menu.quit" = "إنهاء PathZep";
+"window.shortcut_settings_title" = "إعدادات اختصارات PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "إعدادات الاختصارات";
+"settings.copy_absolute_path" = "نسخ المسار المطلق:";
+"settings.copy_relative_path" = "نسخ المسار النسبي:";
+"settings.click_to_set" = "انقر لتعيين الاختصار";
+"settings.clear" = "مسح";
+"settings.hint" = "انقر على حقل واضغط على مجموعة المفاتيح المطلوبة.\nالاختصارات العامة تعمل من أي تطبيق.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "اضغط على مجموعة مفاتيح…";

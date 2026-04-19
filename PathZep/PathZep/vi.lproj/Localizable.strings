@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Cài đặt phím tắt…";
+"menu.quit" = "Thoát PathZep";
+"window.shortcut_settings_title" = "PathZep — Cài đặt phím tắt";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Cài đặt phím tắt";
+"settings.copy_absolute_path" = "Sao chép đường dẫn tuyệt đối:";
+"settings.copy_relative_path" = "Sao chép đường dẫn tương đối:";
+"settings.click_to_set" = "Nhấp để đặt phím tắt";
+"settings.clear" = "Xóa";
+"settings.hint" = "Nhấp vào ô và nhấn tổ hợp phím mong muốn.\nPhím tắt toàn cục hoạt động từ bất kỳ ứng dụng nào.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Nhấn tổ hợp phím…";

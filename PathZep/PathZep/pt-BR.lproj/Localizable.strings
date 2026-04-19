@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Configurações de Atalhos…";
+"menu.quit" = "Encerrar PathZep";
+"window.shortcut_settings_title" = "Configurações de Atalhos do PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Configurações de Atalhos";
+"settings.copy_absolute_path" = "Copiar Caminho Absoluto:";
+"settings.copy_relative_path" = "Copiar Caminho Relativo:";
+"settings.click_to_set" = "Clique para definir o atalho";
+"settings.clear" = "Limpar";
+"settings.hint" = "Clique em um campo e pressione a combinação de teclas desejada.\nOs atalhos globais funcionam em qualquer app.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Pressione uma combinação de teclas…";
