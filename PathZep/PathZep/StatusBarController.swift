@@ -6,16 +6,10 @@ class StatusBarController {
     private var settingsWindow: NSWindow?
 
     init() {
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem.button {
-            // SF Symbol이 없는 환경 대비 — 텍스트 fallback
-            if let img = NSImage(systemSymbolName: "link", accessibilityDescription: "PathZep") {
-                img.isTemplate = true
-                button.image = img
-            } else {
-                button.title = "~/"
-            }
+            button.title = "~/"
         }
 
         setupMenu()
