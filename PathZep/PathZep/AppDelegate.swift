@@ -6,6 +6,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private static let hasShownOnboardingKey = "hasShownOnboarding"
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        HotKeyManager.shared.setup()
         statusBarController = StatusBarController()
         showOnboardingIfNeeded()
     }

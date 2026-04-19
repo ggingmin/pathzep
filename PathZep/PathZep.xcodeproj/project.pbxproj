@@ -18,6 +18,7 @@
 		A10000070000000000000007 /* PathZepFinder.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A30000020000000000000002 /* PathZepFinder.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10000080000000000000008 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000B000000000000011 /* StatusBarController.swift */; };
 		A10000090000000000000009 /* ShortcutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000C000000000000012 /* ShortcutSettingsViewController.swift */; };
+		A1000000H000000000000017 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000H000000000000017 /* HotKeyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A2000000B000000000000011 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		A2000000C000000000000012 /* ShortcutSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSettingsViewController.swift; sourceTree = "<group>"; };
 		A2000000D000000000000013 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A2000000H000000000000017 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
 		A2000000E100000000000014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2000000E200000000000014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2000000E300000000000014 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				A20000010000000000000001 /* AppDelegate.swift */,
 				A2000000B000000000000011 /* StatusBarController.swift */,
 				A2000000C000000000000012 /* ShortcutSettingsViewController.swift */,
+				A2000000H000000000000017 /* HotKeyManager.swift */,
 				A20000030000000000000003 /* Assets.xcassets */,
 				A20000070000000000000007 /* Info.plist */,
 				A20000080000000000000008 /* PathZep.entitlements */,
@@ -342,6 +345,7 @@
 				A10000010000000000000001 /* AppDelegate.swift in Sources */,
 				A10000080000000000000008 /* StatusBarController.swift in Sources */,
 				A10000090000000000000009 /* ShortcutSettingsViewController.swift in Sources */,
+				A1000000H000000000000017 /* HotKeyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

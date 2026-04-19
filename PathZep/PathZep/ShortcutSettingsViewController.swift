@@ -6,33 +6,19 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
     private var absoluteShortcutField: ShortcutRecorderField!
     private var relativeShortcutField: ShortcutRecorderField!
 
-    private static let absoluteKeyKey = "absolutePathShortcutKey"
-    private static let absoluteModKey = "absolutePathShortcutModifiers"
-    private static let relativeKeyKey = "relativePathShortcutKey"
-    private static let relativeModKey = "relativePathShortcutModifiers"
-    private static let hasLaunchedBeforeKey = "hasLaunchedBefore"
-
-    // Default shortcuts: ⌃⇧A (absolute) and ⌃⇧R (relative)
-    private static let defaultAbsoluteKeyCode: UInt32 = 0   // kVK_ANSI_A
-    private static let defaultRelativeKeyCode: UInt32 = 15  // kVK_ANSI_R
-    private static let defaultModifiers: NSEvent.ModifierFlags = [.control, .shift]
-
-    private var absoluteHotKeyRef: EventHotKeyRef?
-    private var relativeHotKeyRef: EventHotKeyRef?
-
-    private static var shared: ShortcutSettingsViewController?
-
     override func loadView() {
         view = NSView(frame: NSRect(x: 0, y: 0, width: 420, height: 260))
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ShortcutSettingsViewController.shared = self
         setupUI()
         loadShortcuts()
-        registerHotKeys()
-        installEventHandler()
+    }
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        loadShortcuts()
     }
 
     private func setupUI() {
@@ -50,7 +36,7 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
         absoluteShortcutField = ShortcutRecorderField()
         absoluteShortcutField.placeholderString = NSLocalizedString("settings.click_to_set", comment: "")
-        absoluteShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
+        absoluteShortcutField.onShortcutChanged = { [weak self] in self?.onAbsoluteShortcutChanged() }
         absoluteShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absoluteShortcutField)
 
@@ -67,7 +53,7 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
         relativeShortcutField = ShortcutRecorderField()
         relativeShortcutField.placeholderString = NSLocalizedString("settings.click_to_set", comment: "")
-        relativeShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
+        relativeShortcutField.onShortcutChanged = { [weak self] in self?.onRelativeShortcutChanged() }
         relativeShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relativeShortcutField)
 
@@ -119,185 +105,39 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
         ])
     }
 
-    // MARK: - Clear
+    // MARK: - Shortcut Changes
+
+    private func onAbsoluteShortcutChanged() {
+        if let shortcut = absoluteShortcutField.recordedShortcut {
+            HotKeyManager.shared.saveShortcut(keyCode: shortcut.keyCode, modifiers: shortcut.modifiers, forAbsolute: true)
+        }
+    }
+
+    private func onRelativeShortcutChanged() {
+        if let shortcut = relativeShortcutField.recordedShortcut {
+            HotKeyManager.shared.saveShortcut(keyCode: shortcut.keyCode, modifiers: shortcut.modifiers, forAbsolute: false)
+        }
+    }
 
     @objc private func clearAbsoluteShortcut() {
         absoluteShortcutField.clear()
-        saveAndReregister()
+        HotKeyManager.shared.clearShortcut(forAbsolute: true)
     }
 
     @objc private func clearRelativeShortcut() {
         relativeShortcutField.clear()
-        saveAndReregister()
+        HotKeyManager.shared.clearShortcut(forAbsolute: false)
     }
 
-    // MARK: - Persistence
-
-    private func saveAndReregister() {
-        let defaults = UserDefaults.standard
-
-        if let shortcut = absoluteShortcutField.recordedShortcut {
-            defaults.set(Int(shortcut.keyCode), forKey: Self.absoluteKeyKey)
-            defaults.set(Int(shortcut.modifiers.rawValue), forKey: Self.absoluteModKey)
-        } else {
-            defaults.removeObject(forKey: Self.absoluteKeyKey)
-            defaults.removeObject(forKey: Self.absoluteModKey)
-        }
-
-        if let shortcut = relativeShortcutField.recordedShortcut {
-            defaults.set(Int(shortcut.keyCode), forKey: Self.relativeKeyKey)
-            defaults.set(Int(shortcut.modifiers.rawValue), forKey: Self.relativeModKey)
-        } else {
-            defaults.removeObject(forKey: Self.relativeKeyKey)
-            defaults.removeObject(forKey: Self.relativeModKey)
-        }
-
-        registerHotKeys()
-    }
+    // MARK: - Load from HotKeyManager
 
     private func loadShortcuts() {
-        let defaults = UserDefaults.standard
-
-        // Set defaults on first launch
-        if !defaults.bool(forKey: Self.hasLaunchedBeforeKey) {
-            defaults.set(true, forKey: Self.hasLaunchedBeforeKey)
-            if defaults.object(forKey: Self.absoluteKeyKey) == nil {
-                defaults.set(Int(Self.defaultAbsoluteKeyCode), forKey: Self.absoluteKeyKey)
-                defaults.set(Int(Self.defaultModifiers.rawValue), forKey: Self.absoluteModKey)
-            }
-            if defaults.object(forKey: Self.relativeKeyKey) == nil {
-                defaults.set(Int(Self.defaultRelativeKeyCode), forKey: Self.relativeKeyKey)
-                defaults.set(Int(Self.defaultModifiers.rawValue), forKey: Self.relativeModKey)
-            }
+        if let shortcut = HotKeyManager.shared.storedShortcut(forAbsolute: true) {
+            absoluteShortcutField.setShortcut(keyCode: shortcut.keyCode, modifiers: shortcut.modifiers)
         }
-
-        if defaults.object(forKey: Self.absoluteKeyKey) != nil {
-            let keyCode = UInt32(defaults.integer(forKey: Self.absoluteKeyKey))
-            let modifiers = NSEvent.ModifierFlags(rawValue: UInt(defaults.integer(forKey: Self.absoluteModKey)))
-            absoluteShortcutField.setShortcut(keyCode: keyCode, modifiers: modifiers)
+        if let shortcut = HotKeyManager.shared.storedShortcut(forAbsolute: false) {
+            relativeShortcutField.setShortcut(keyCode: shortcut.keyCode, modifiers: shortcut.modifiers)
         }
-
-        if defaults.object(forKey: Self.relativeKeyKey) != nil {
-            let keyCode = UInt32(defaults.integer(forKey: Self.relativeKeyKey))
-            let modifiers = NSEvent.ModifierFlags(rawValue: UInt(defaults.integer(forKey: Self.relativeModKey)))
-            relativeShortcutField.setShortcut(keyCode: keyCode, modifiers: modifiers)
-        }
-    }
-
-    // MARK: - Global Hotkeys (Carbon)
-
-    private static let absoluteHotKeyID = EventHotKeyID(signature: fourCharCode("PZab"), id: 1)
-    private static let relativeHotKeyID = EventHotKeyID(signature: fourCharCode("PZrl"), id: 2)
-
-    private func registerHotKeys() {
-        if let ref = absoluteHotKeyRef {
-            UnregisterEventHotKey(ref)
-            absoluteHotKeyRef = nil
-        }
-        if let ref = relativeHotKeyRef {
-            UnregisterEventHotKey(ref)
-            relativeHotKeyRef = nil
-        }
-
-        if let shortcut = absoluteShortcutField.recordedShortcut {
-            var ref: EventHotKeyRef?
-            let carbonMods = carbonModifiers(from: shortcut.modifiers)
-            RegisterEventHotKey(shortcut.keyCode, carbonMods, Self.absoluteHotKeyID, GetApplicationEventTarget(), 0, &ref)
-            absoluteHotKeyRef = ref
-        }
-
-        if let shortcut = relativeShortcutField.recordedShortcut {
-            var ref: EventHotKeyRef?
-            let carbonMods = carbonModifiers(from: shortcut.modifiers)
-            RegisterEventHotKey(shortcut.keyCode, carbonMods, Self.relativeHotKeyID, GetApplicationEventTarget(), 0, &ref)
-            relativeHotKeyRef = ref
-        }
-    }
-
-    private func installEventHandler() {
-        var eventType = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
-        InstallEventHandler(GetApplicationEventTarget(), hotKeyHandler, 1, &eventType, nil, nil)
-    }
-
-    private func carbonModifiers(from flags: NSEvent.ModifierFlags) -> UInt32 {
-        var mods: UInt32 = 0
-        if flags.contains(.command) { mods |= UInt32(cmdKey) }
-        if flags.contains(.option)  { mods |= UInt32(optionKey) }
-        if flags.contains(.control) { mods |= UInt32(controlKey) }
-        if flags.contains(.shift)   { mods |= UInt32(shiftKey) }
-        return mods
-    }
-
-    // MARK: - Copy Actions
-
-    static func handleHotKey(id: EventHotKeyID) {
-        if id.signature == absoluteHotKeyID.signature && id.id == absoluteHotKeyID.id {
-            copySelectedFinderPaths(relative: false)
-        } else if id.signature == relativeHotKeyID.signature && id.id == relativeHotKeyID.id {
-            copySelectedFinderPaths(relative: true)
-        }
-    }
-
-    private static func copySelectedFinderPaths(relative: Bool) {
-        let script: String
-        if relative {
-            script = """
-            tell application "Finder"
-                set selectedItems to selection
-                if (count of selectedItems) is 0 then return ""
-                set pathList to {}
-                repeat with anItem in selectedItems
-                    set end of pathList to POSIX path of (anItem as alias)
-                end repeat
-                set AppleScript's text item delimiters to linefeed
-                return pathList as text
-            end tell
-            """
-        } else {
-            script = """
-            tell application "Finder"
-                set selectedItems to selection
-                if (count of selectedItems) is 0 then return ""
-                set pathList to {}
-                repeat with anItem in selectedItems
-                    set end of pathList to POSIX path of (anItem as alias)
-                end repeat
-                set AppleScript's text item delimiters to linefeed
-                return pathList as text
-            end tell
-            """
-        }
-
-        guard let appleScript = NSAppleScript(source: script) else { return }
-        var error: NSDictionary?
-        let result = appleScript.executeAndReturnError(&error)
-        guard error == nil, let paths = result.stringValue, !paths.isEmpty else { return }
-
-        let finalPaths: String
-        if relative {
-            let homeDir = NSHomeDirectory()
-            finalPaths = paths.split(separator: "\n", omittingEmptySubsequences: false).map { line in
-                let path = String(line)
-                // Remove trailing slash from Finder paths
-                let cleaned = path.hasSuffix("/") && path.count > 1 ? String(path.dropLast()) : path
-                if cleaned.hasPrefix(homeDir + "/") {
-                    return "~/" + String(cleaned.dropFirst(homeDir.count + 1))
-                } else if cleaned == homeDir {
-                    return "~"
-                }
-                return cleaned
-            }.joined(separator: "\n")
-        } else {
-            // Remove trailing slashes from Finder paths
-            finalPaths = paths.split(separator: "\n", omittingEmptySubsequences: false).map { line in
-                let path = String(line)
-                return path.hasSuffix("/") && path.count > 1 ? String(path.dropLast()) : path
-            }.joined(separator: "\n")
-        }
-
-        let pasteboard = NSPasteboard.general
-        pasteboard.clearContents()
-        pasteboard.setString(finalPaths, forType: .string)
     }
 
     // MARK: - NSWindowDelegate
@@ -305,24 +145,6 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         // Keep running in status bar
     }
-}
-
-// MARK: - Carbon Hot Key Handler (C function)
-
-private func hotKeyHandler(nextHandler: EventHandlerCallRef?, event: EventRef?, userData: UnsafeMutableRawPointer?) -> OSStatus {
-    var hotKeyID = EventHotKeyID()
-    GetEventParameter(event, EventParamName(kEventParamDirectObject), EventParamType(typeEventHotKeyID),
-                      nil, MemoryLayout<EventHotKeyID>.size, nil, &hotKeyID)
-    ShortcutSettingsViewController.handleHotKey(id: hotKeyID)
-    return noErr
-}
-
-private func fourCharCode(_ string: String) -> FourCharCode {
-    var result: FourCharCode = 0
-    for char in string.utf8.prefix(4) {
-        result = (result << 8) | FourCharCode(char)
-    }
-    return result
 }
 
 // MARK: - Shortcut Recorder Field
@@ -422,7 +244,6 @@ class ShortcutRecorderField: NSView {
             guard let self = self, self.isRecording else { return event }
 
             if event.type == .flagsChanged {
-                // Ignore standalone modifier presses
                 return event
             }
 
@@ -433,18 +254,17 @@ class ShortcutRecorderField: NSView {
 
             // Require at least one modifier
             guard !mods.isEmpty else {
-                // ESC cancels recording
-                if event.keyCode == 53 {
+                if event.keyCode == 53 { // ESC
                     self.stopRecording()
                 }
-                return nil // swallow the event
+                return nil
             }
 
             let keyCode = UInt32(event.keyCode)
             self.setShortcut(keyCode: keyCode, modifiers: mods)
             self.stopRecording()
             self.onShortcutChanged?()
-            return nil // swallow the event
+            return nil
         }
     }
 
@@ -481,9 +301,8 @@ class ShortcutRecorderField: NSView {
         return parts.joined()
     }
 
-    /// Cache ASCII keyboard layout (com.apple.keylayout.ABC) to always return English key names
+    /// Cache ASCII keyboard layout to always return English key names
     private static let asciiLayoutData: Data? = {
-        // Find ASCII-capable keyboard layout among all input sources
         let conditions: CFDictionary = [
             kTISPropertyInputSourceCategory as String: kTISCategoryKeyboardInputSource as String,
             kTISPropertyInputSourceIsASCIICapable as String: true
@@ -515,7 +334,6 @@ class ShortcutRecorderField: NSView {
 
         if let name = specialKeys[keyCode] { return name }
 
-        // Always convert key names using ASCII (English) layout
         guard let data = Self.asciiLayoutData else { return "?" }
 
         return data.withUnsafeBytes { rawPtr -> String in
