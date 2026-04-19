@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PathZep DMG 배경 — SVG 생성 후 macOS 내장 렌더러(Swift)로 PNG 변환"""
+"""PathZep DMG background — generate SVG then render to PNG via macOS native Swift"""
 import os, subprocess, tempfile
 
 W, H = 660, 440
@@ -17,10 +17,10 @@ svg = f'''<?xml version="1.0" encoding="UTF-8"?>
     </marker>
   </defs>
 
-  <!-- 흰색 배경 -->
+  <!-- White background -->
   <rect width="{W}" height="{H}" fill="#FFFFFF"/>
 
-  <!-- ~/ 로고 -->
+  <!-- ~/ logo -->
   <text x="{W//2}" y="78" text-anchor="middle"
         font-family="Menlo, SF Mono, monospace" font-weight="900" font-size="54"
         fill="#5838C8">~/</text>
@@ -30,16 +30,16 @@ svg = f'''<?xml version="1.0" encoding="UTF-8"?>
         font-family="Menlo, monospace" font-weight="bold" font-size="15"
         fill="#8C8C9B">PathZep</text>
 
-  <!-- 구분선 -->
+  <!-- Divider -->
   <line x1="{W//2 - 55}" y1="130" x2="{W//2 + 55}" y2="130"
         stroke="#E0E0E8" stroke-width="1"/>
 
-  <!-- 곡선 화살표: 앱 아이콘(160,220) → Applications(500,220), 아이콘 80px -->
+  <!-- Curved arrow: app icon(160,220) → Applications(500,220), icon 80px -->
   <path d="M 205 260 C 270 210, 390 210, 455 260"
         fill="none" stroke="url(#arrowGrad)" stroke-width="2.5"
         stroke-linecap="round" marker-end="url(#arrowHead)"/>
 
-  <!-- Drag to install — 아치 선 위 -->
+  <!-- Drag to install — above the arch line -->
   <text x="{W//2}" y="200" text-anchor="middle"
         font-family="Helvetica Neue, -apple-system, sans-serif" font-weight="400" font-size="12"
         fill="#AAAAB8">Drag to install</text>
@@ -48,12 +48,12 @@ svg = f'''<?xml version="1.0" encoding="UTF-8"?>
 out_dir = os.path.join(os.path.dirname(__file__), "..", "build")
 os.makedirs(out_dir, exist_ok=True)
 
-# SVG 임시 파일 저장
+# Save SVG to temp file
 svg_path = os.path.join(out_dir, "dmg_background.svg")
 with open(svg_path, "w") as f:
     f.write(svg)
 
-# Swift 스크립트로 SVG → PNG 렌더링 (macOS 내장 WebKit/CoreGraphics)
+# Render SVG to PNG via Swift script (macOS native WebKit/CoreGraphics)
 swift_code = r'''
 import Foundation
 import AppKit
@@ -118,7 +118,7 @@ if result.returncode != 0:
     print(f"Swift render failed: {result.stderr}")
     exit(1)
 
-# 임시 파일 정리
+# Clean up temp files
 os.remove(swift_path)
 
-print(f"✅ DMG 배경 생성: {png_1x}")
+print(f"✅ DMG background created: {png_1x}")

@@ -22,10 +22,10 @@ class StatusBarController {
     private func setupMenu() {
         let menu = NSMenu()
 
-        menu.addItem(withTitle: "단축키 설정…", action: #selector(showSettings), keyEquivalent: ",")
+        menu.addItem(withTitle: "Shortcut Settings…", action: #selector(showSettings), keyEquivalent: ",")
         menu.items.last?.target = self
         menu.addItem(.separator())
-        menu.addItem(withTitle: "PathZep 종료", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        menu.addItem(withTitle: "Quit PathZep", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
 
         statusItem.menu = menu
     }
@@ -44,7 +44,7 @@ class StatusBarController {
             backing: .buffered,
             defer: false
         )
-        window.title = "PathZep 단축키 설정"
+        window.title = "PathZep Shortcut Settings"
         window.contentViewController = viewController
         window.center()
         window.isReleasedWhenClosed = false

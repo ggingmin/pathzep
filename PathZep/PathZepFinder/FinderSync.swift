@@ -26,7 +26,7 @@ class FinderSync: FIFinderSync {
         let menu = NSMenu(title: "PathZep")
 
         let absoluteItem = NSMenuItem(
-            title: "절대 경로 복사",
+            title: "Copy Absolute Path",
             action: #selector(copyAbsolutePath(_:)),
             keyEquivalent: ""
         )
@@ -34,7 +34,7 @@ class FinderSync: FIFinderSync {
         menu.addItem(absoluteItem)
 
         let relativeItem = NSMenuItem(
-            title: "상대 경로 복사",
+            title: "Copy Relative Path",
             action: #selector(copyRelativePath(_:)),
             keyEquivalent: ""
         )

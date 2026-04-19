@@ -31,48 +31,48 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
     private func setupUI() {
         // Title
-        let titleLabel = NSTextField(labelWithString: "단축키 설정")
+        let titleLabel = NSTextField(labelWithString: "Shortcut Settings")
         titleLabel.font = .boldSystemFont(ofSize: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
 
         // Absolute path row
-        let absLabel = NSTextField(labelWithString: "절대 경로 복사:")
+        let absLabel = NSTextField(labelWithString: "Copy Absolute Path:")
         absLabel.alignment = .right
         absLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absLabel)
 
         absoluteShortcutField = ShortcutRecorderField()
-        absoluteShortcutField.placeholderString = "단축키를 입력하세요"
+        absoluteShortcutField.placeholderString = "Click to set shortcut"
         absoluteShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
         absoluteShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absoluteShortcutField)
 
-        let absClearButton = NSButton(title: "지우기", target: self, action: #selector(clearAbsoluteShortcut))
+        let absClearButton = NSButton(title: "Clear", target: self, action: #selector(clearAbsoluteShortcut))
         absClearButton.bezelStyle = .rounded
         absClearButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absClearButton)
 
         // Relative path row
-        let relLabel = NSTextField(labelWithString: "상대 경로 복사:")
+        let relLabel = NSTextField(labelWithString: "Copy Relative Path:")
         relLabel.alignment = .right
         relLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relLabel)
 
         relativeShortcutField = ShortcutRecorderField()
-        relativeShortcutField.placeholderString = "단축키를 입력하세요"
+        relativeShortcutField.placeholderString = "Click to set shortcut"
         relativeShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
         relativeShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relativeShortcutField)
 
-        let relClearButton = NSButton(title: "지우기", target: self, action: #selector(clearRelativeShortcut))
+        let relClearButton = NSButton(title: "Clear", target: self, action: #selector(clearRelativeShortcut))
         relClearButton.bezelStyle = .rounded
         relClearButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relClearButton)
 
         // Hint
         let hintLabel = NSTextField(wrappingLabelWithString:
-            "필드를 클릭한 뒤 원하는 단축키 조합을 누르세요.\n전역 단축키로 어떤 앱에서든 경로를 복사할 수 있습니다.")
+            "Click a field and press your desired shortcut.\nGlobal shortcuts work from any app.")
         hintLabel.font = .systemFont(ofSize: 11)
         hintLabel.textColor = .tertiaryLabelColor
         hintLabel.alignment = .center
@@ -346,7 +346,7 @@ class ShortcutRecorderField: NSTextField {
     override func mouseDown(with event: NSEvent) {
         window?.makeFirstResponder(self)
         isRecording = true
-        stringValue = "키 조합을 누르세요…"
+        stringValue = "Press a key combination…"
         layer?.borderColor = NSColor.controlAccentColor.cgColor
     }
 
@@ -415,9 +415,9 @@ class ShortcutRecorderField: NSTextField {
         return parts.joined()
     }
 
-    /// ASCII 키보드 레이아웃(com.apple.keylayout.ABC)을 캐시해서 항상 영문 키 이름 반환
+    /// Cache ASCII keyboard layout (com.apple.keylayout.ABC) to always return English key names
     private static let asciiLayoutData: Data? = {
-        // 모든 입력 소스 중 ASCII-capable 키보드 레이아웃 찾기
+        // Find ASCII-capable keyboard layout among all input sources
         let conditions: CFDictionary = [
             kTISPropertyInputSourceCategory as String: kTISCategoryKeyboardInputSource as String,
             kTISPropertyInputSourceIsASCIICapable as String: true
@@ -449,7 +449,7 @@ class ShortcutRecorderField: NSTextField {
 
         if let name = specialKeys[keyCode] { return name }
 
-        // 항상 ASCII(영문) 레이아웃으로 키 이름 변환
+        // Always convert key names using ASCII (English) layout
         guard let data = Self.asciiLayoutData else { return "?" }
 
         return data.withUnsafeBytes { rawPtr -> String in

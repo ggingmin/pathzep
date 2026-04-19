@@ -1,19 +1,19 @@
 #!/bin/bash
-# PathZep - Quick Actions 설치 스크립트
-# Automator Quick Action을 생성하여 Finder 우클릭 메뉴에 경로 복사 기능을 추가합니다.
-# Xcode 없이 바로 사용 가능합니다.
+# PathZep - Quick Actions install script
+# Creates Automator Quick Actions for copying paths from Finder context menu.
+# Works without Xcode.
 
 set -e
 
 SERVICES_DIR="$HOME/Library/Services"
 mkdir -p "$SERVICES_DIR"
 
-echo "🚀 PathZep Quick Actions 설치 중..."
+echo "🚀 Installing PathZep Quick Actions..."
 
 # ============================================================
-# 1. "절대 경로 복사" Quick Action
+# 1. "Copy Absolute Path" Quick Action
 # ============================================================
-ABSOLUTE_ACTION="$SERVICES_DIR/절대 경로 복사.workflow"
+ABSOLUTE_ACTION="$SERVICES_DIR/Copy Absolute Path.workflow"
 rm -rf "$ABSOLUTE_ACTION"
 mkdir -p "$ABSOLUTE_ACTION/Contents"
 
@@ -28,7 +28,7 @@ cat > "$ABSOLUTE_ACTION/Contents/Info.plist" << 'PLIST'
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>절대 경로 복사</string>
+				<string>Copy Absolute Path</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
@@ -251,12 +251,12 @@ cat > "$ABSOLUTE_ACTION/Contents/document.wflow" << 'WFLOW'
 </plist>
 WFLOW
 
-echo "  ✅ '절대 경로 복사' Quick Action 설치 완료"
+echo "  ✅ 'Copy Absolute Path' Quick Action installed"
 
 # ============================================================
-# 2. "상대 경로 복사" Quick Action
+# 2. "Copy Relative Path" Quick Action
 # ============================================================
-RELATIVE_ACTION="$SERVICES_DIR/상대 경로 복사.workflow"
+RELATIVE_ACTION="$SERVICES_DIR/Copy Relative Path.workflow"
 rm -rf "$RELATIVE_ACTION"
 mkdir -p "$RELATIVE_ACTION/Contents"
 
@@ -271,7 +271,7 @@ cat > "$RELATIVE_ACTION/Contents/Info.plist" << 'PLIST'
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>상대 경로 복사</string>
+				<string>Copy Relative Path</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
@@ -502,26 +502,26 @@ done | /usr/bin/pbcopy</string>
 </plist>
 WFLOW
 
-echo "  ✅ '상대 경로 복사' Quick Action 설치 완료"
+echo "  ✅ 'Copy Relative Path' Quick Action installed"
 
 # ============================================================
-# 3. 단축키 안내
+# 3. Shortcut info
 # ============================================================
 echo ""
 echo "============================================"
-echo "  PathZep Quick Actions 설치 완료! 🎉"
+echo "  PathZep Quick Actions installed! 🎉"
 echo "============================================"
 echo ""
-echo "📋 사용법:"
-echo "  Finder에서 파일/폴더를 우클릭 → 빠른 동작(Quick Actions) →"
-echo "    • '절대 경로 복사' — 전체 경로를 클립보드에 복사"
-echo "    • '상대 경로 복사' — ~/로 시작하는 홈 디렉토리 기준 경로를 복사"
+echo "📋 Usage:"
+echo "  Right-click files/folders in Finder → Quick Actions →"
+echo "    • 'Copy Absolute Path' — copies full path to clipboard"
+echo "    • 'Copy Relative Path' — copies home-relative path (~/)"
 echo ""
-echo "⌨️  단축키 설정 방법:"
-echo "  시스템 설정 → 키보드 → 키보드 단축키 → 서비스 → 파일 및 폴더"
-echo "  에서 '절대 경로 복사', '상대 경로 복사'에 단축키를 지정하세요."
+echo "⌨️  To set keyboard shortcuts:"
+echo "  System Settings → Keyboard → Keyboard Shortcuts → Services → Files and Folders"
+echo "  Assign shortcuts to 'Copy Absolute Path' and 'Copy Relative Path'."
 echo ""
-echo "  추천 단축키:"
-echo "    절대 경로 복사: ⌃⌥⌘C (Control+Option+Command+C)"
-echo "    상대 경로 복사: ⌃⇧⌘C (Control+Shift+Command+C)"
+echo "  Recommended shortcuts:"
+echo "    Copy Absolute Path: ⌃⌥⌘C (Control+Option+Command+C)"
+echo "    Copy Relative Path: ⌃⇧⌘C (Control+Shift+Command+C)"
 echo ""

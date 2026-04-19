@@ -40,13 +40,13 @@ open build/PathZep.dmg
 
 After enabling the extension, right-click any file or folder in Finder to see:
 
-- **절대 경로 복사** — Copy absolute path
-- **상대 경로 복사** — Copy relative path (`~/`)
+- **Copy Absolute Path** — e.g. `/Users/me/projects/app/src/index.ts`
+- **Copy Relative Path** — e.g. `~/projects/app/src/index.ts`
 
 ### Global shortcuts
 
 1. Click the `~/` icon in the menu bar
-2. Select **단축키 설정…** (Shortcut settings)
+2. Select **Shortcut Settings…**
 3. Click a field and press your desired key combination (e.g. `⌃⌥⌘C`)
 
 Shortcuts work globally — copy paths from Finder while in any app.
