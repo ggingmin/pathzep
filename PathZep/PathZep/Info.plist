@@ -27,6 +27,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSAppleEventsUsageDescription</key>
-	<string>PathZep이 Finder에서 선택된 파일의 경로를 가져오기 위해 접근 권한이 필요합니다.</string>
+	<string>PathZep needs access to get the path of files selected in Finder.</string>
 </dict>
 </plist>

@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "절대 경로 복사";
+"finder.copy_relative_path" = "상대 경로 복사";

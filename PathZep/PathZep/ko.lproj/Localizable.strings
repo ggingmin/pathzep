@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "단축키 설정…";
+"menu.quit" = "PathZep 종료";
+"window.shortcut_settings_title" = "PathZep 단축키 설정";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "단축키 설정";
+"settings.copy_absolute_path" = "절대 경로 복사:";
+"settings.copy_relative_path" = "상대 경로 복사:";
+"settings.click_to_set" = "클릭하여 단축키 설정";
+"settings.clear" = "지우기";
+"settings.hint" = "필드를 클릭하고 원하는 단축키를 누르세요.\n전역 단축키는 모든 앱에서 작동합니다.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "키 조합을 누르세요…";

@@ -1,0 +1,2 @@
+/* Info.plist localization */
+"NSAppleEventsUsageDescription" = "PathZep needs access to get the path of files selected in Finder.";

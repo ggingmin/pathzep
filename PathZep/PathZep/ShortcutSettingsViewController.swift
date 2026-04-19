@@ -31,48 +31,48 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
     private func setupUI() {
         // Title
-        let titleLabel = NSTextField(labelWithString: "Shortcut Settings")
+        let titleLabel = NSTextField(labelWithString: NSLocalizedString("settings.title", comment: ""))
         titleLabel.font = .boldSystemFont(ofSize: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
 
         // Absolute path row
-        let absLabel = NSTextField(labelWithString: "Copy Absolute Path:")
+        let absLabel = NSTextField(labelWithString: NSLocalizedString("settings.copy_absolute_path", comment: ""))
         absLabel.alignment = .right
         absLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absLabel)
 
         absoluteShortcutField = ShortcutRecorderField()
-        absoluteShortcutField.placeholderString = "Click to set shortcut"
+        absoluteShortcutField.placeholderString = NSLocalizedString("settings.click_to_set", comment: "")
         absoluteShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
         absoluteShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absoluteShortcutField)
 
-        let absClearButton = NSButton(title: "Clear", target: self, action: #selector(clearAbsoluteShortcut))
+        let absClearButton = NSButton(title: NSLocalizedString("settings.clear", comment: ""), target: self, action: #selector(clearAbsoluteShortcut))
         absClearButton.bezelStyle = .rounded
         absClearButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(absClearButton)
 
         // Relative path row
-        let relLabel = NSTextField(labelWithString: "Copy Relative Path:")
+        let relLabel = NSTextField(labelWithString: NSLocalizedString("settings.copy_relative_path", comment: ""))
         relLabel.alignment = .right
         relLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relLabel)
 
         relativeShortcutField = ShortcutRecorderField()
-        relativeShortcutField.placeholderString = "Click to set shortcut"
+        relativeShortcutField.placeholderString = NSLocalizedString("settings.click_to_set", comment: "")
         relativeShortcutField.onShortcutChanged = { [weak self] in self?.saveAndReregister() }
         relativeShortcutField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relativeShortcutField)
 
-        let relClearButton = NSButton(title: "Clear", target: self, action: #selector(clearRelativeShortcut))
+        let relClearButton = NSButton(title: NSLocalizedString("settings.clear", comment: ""), target: self, action: #selector(clearRelativeShortcut))
         relClearButton.bezelStyle = .rounded
         relClearButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(relClearButton)
 
         // Hint
         let hintLabel = NSTextField(wrappingLabelWithString:
-            "Click a field and press your desired shortcut.\nGlobal shortcuts work from any app.")
+            NSLocalizedString("settings.hint", comment: ""))
         hintLabel.font = .systemFont(ofSize: 11)
         hintLabel.textColor = .tertiaryLabelColor
         hintLabel.alignment = .center
@@ -377,9 +377,11 @@ class ShortcutRecorderField: NSView {
         startRecording()
     }
 
+    private static let recordingPrompt = NSLocalizedString("shortcut.press_combination", comment: "")
+
     private func startRecording() {
         isRecording = true
-        label.stringValue = "Press a key combination…"
+        label.stringValue = Self.recordingPrompt
         label.textColor = .secondaryLabelColor
         layer?.borderColor = NSColor.controlAccentColor.cgColor
         startMonitoring()
@@ -388,7 +390,7 @@ class ShortcutRecorderField: NSView {
     private func stopRecording() {
         isRecording = false
         layer?.borderColor = NSColor.separatorColor.cgColor
-        if label.stringValue == "Press a key combination…" {
+        if label.stringValue == Self.recordingPrompt {
             label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
             label.textColor = .labelColor
         }
