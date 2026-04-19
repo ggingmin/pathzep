@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopiuj ścieżki plików i folderów z Findera do schowka — natychmiast.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopiuj ścieżki plików i folderów z Findera do schowka — natychmiast.
+</p>
 
 Lekkie, natywne narzędzie macOS, które dodaje **menu kontekstowe prawego przycisku myszy** oraz **globalne skróty klawiszowe** do kopiowania ścieżek bezwzględnych lub względnych do katalogu domowego (`~/`).
 

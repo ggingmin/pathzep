@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Finder'dan dosya ve klasör yollarını panonuza kopyalayın — anında.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Finder'dan dosya ve klasör yollarını panonuza kopyalayın — anında.
+</p>
 
 **Sağ tıklama bağlam menüsü** ve **genel klavye kısayolları** ile mutlak veya ev dizinine göre (`~/`) yolları kopyalamanızı sağlayan hafif, yerel bir macOS aracı.
 

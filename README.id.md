@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Salin path file dan folder dari Finder ke clipboard — secara instan.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Salin path file dan folder dari Finder ke clipboard — secara instan.
+</p>
 
 Utilitas macOS native yang ringan, menambahkan **menu konteks klik kanan** dan **pintasan keyboard global** untuk menyalin path absolut atau relatif terhadap home (`~/`).
 

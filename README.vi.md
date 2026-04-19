@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Sao chép đường dẫn tệp và thư mục từ Finder vào clipboard — tức thì.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Sao chép đường dẫn tệp và thư mục từ Finder vào clipboard — tức thì.
+</p>
 
 Một tiện ích macOS gốc, nhẹ, thêm **menu ngữ cảnh chuột phải** và **phím tắt bàn phím toàn cục** để sao chép đường dẫn tuyệt đối hoặc tương đối so với thư mục home (`~/`).
 

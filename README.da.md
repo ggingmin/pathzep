@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopiér fil- og mappestier fra Finder til din udklipsholder — øjeblikkeligt.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopiér fil- og mappestier fra Finder til din udklipsholder — øjeblikkeligt.
+</p>
 
 Et letvægts, indbygget macOS-værktøj der tilføjer **højreklik-kontekstmenu** og **globale tastaturgenveje** til kopiering af absolutte eller hjemme-relative (`~/`) stier.
 

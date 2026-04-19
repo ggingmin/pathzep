@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Salin laluan fail dan folder dari Finder ke papan keratan anda — serta-merta.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Salin laluan fail dan folder dari Finder ke papan keratan anda — serta-merta.
+</p>
 
 Utiliti macOS asli yang ringan yang menambahkan **menu konteks klik kanan** dan **pintasan papan kekunci global** untuk menyalin laluan mutlak atau relatif kepada direktori rumah (`~/`).
 

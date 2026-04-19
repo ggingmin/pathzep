@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Copia rutas de archivos y carpetas desde Finder a tu portapapeles — al instante.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Copia rutas de archivos y carpetas desde Finder a tu portapapeles — al instante.
+</p>
 
 Una utilidad macOS nativa y ligera que añade un **menú contextual de clic derecho** y **atajos de teclado globales** para copiar rutas absolutas o relativas al directorio home (`~/`).
 

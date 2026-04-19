@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopiera fil- och mappsökvägar från Finder till urklipp — direkt.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopiera fil- och mappsökvägar från Finder till urklipp — direkt.
+</p>
 
 Ett lättviktigt, inbyggt macOS-verktyg som lägger till **högerklicksmeny** och **globala tangentbordsgenvägar** för att kopiera absoluta eller hemrelativa (`~/`) sökvägar.
 

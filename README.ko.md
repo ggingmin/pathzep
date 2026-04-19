@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Finder에서 파일 및 폴더 경로를 클립보드로 복사하세요 — 즉시.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Finder에서 파일 및 폴더 경로를 클립보드로 복사하세요 — 즉시.
+</p>
 
 **우클릭 컨텍스트 메뉴**와 **전역 키보드 단축키**로 절대 경로 또는 홈 상대 경로(`~/`)를 복사할 수 있는 가볍고 네이티브한 macOS 유틸리티입니다.
 

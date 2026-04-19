@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Copiez les chemins de fichiers et dossiers depuis Finder dans votre presse-papiers — instantanément.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Copiez les chemins de fichiers et dossiers depuis Finder dans votre presse-papiers — instantanément.
+</p>
 
 Un utilitaire macOS natif et léger qui ajoute un **menu contextuel au clic droit** et des **raccourcis clavier globaux** pour copier des chemins absolus ou relatifs au répertoire personnel (`~/`).
 

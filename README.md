@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-> Copy file and folder paths from Finder to your clipboard — instantly.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Copy file and folder paths from Finder to your clipboard — instantly.
+</p>
 
 A lightweight, native macOS utility that adds **right-click context menu** and **global keyboard shortcuts** for copying absolute or home-relative (`~/`) paths.
 

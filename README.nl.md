@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopieer bestands- en mappaden vanuit Finder naar je klembord — direct.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopieer bestands- en mappaden vanuit Finder naar je klembord — direct.
+</p>
 
 Een lichtgewicht, native macOS-hulpprogramma dat een **rechtermuisknop-contextmenu** en **globale sneltoetsen** toevoegt voor het kopiëren van absolute of home-relatieve (`~/`) paden.
 

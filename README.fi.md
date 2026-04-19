@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopioi tiedosto- ja kansioiden polut Finderista leikepöydälle — välittömästi.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopioi tiedosto- ja kansioiden polut Finderista leikepöydälle — välittömästi.
+</p>
 
 Kevyt, natiivi macOS-apuohjelma, joka lisää **hiiren oikean painikkeen kontekstivalikon** ja **yleiset pikanäppäimet** absoluuttisten tai kotihakemistoon suhteellisten (`~/`) polkujen kopioimiseen.
 

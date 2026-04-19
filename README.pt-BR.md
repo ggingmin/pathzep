@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Copie caminhos de arquivos e pastas do Finder para a área de transferência — instantaneamente.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Copie caminhos de arquivos e pastas do Finder para a área de transferência — instantaneamente.
+</p>
 
 Um utilitário macOS nativo e leve que adiciona **menu de contexto com clique direito** e **atalhos de teclado globais** para copiar caminhos absolutos ou relativos ao diretório home (`~/`).
 

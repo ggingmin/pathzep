@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Finderからファイルやフォルダのパスをクリップボードにコピー — 一瞬で。
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Finderからファイルやフォルダのパスをクリップボードにコピー — 一瞬で。
+</p>
 
 **右クリックコンテキストメニュー**と**グローバルキーボードショートカット**で、絶対パスまたはホーム相対パス（`~/`）をコピーできる、軽量でネイティブなmacOSユーティリティです。
 

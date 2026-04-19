@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Kopiere Datei- und Ordnerpfade aus dem Finder in die Zwischenablage — sofort.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Kopiere Datei- und Ordnerpfade aus dem Finder in die Zwischenablage — sofort.
+</p>
 
 Ein leichtgewichtiges, natives macOS-Dienstprogramm mit **Rechtsklick-Kontextmenü** und **globalen Tastaturkurzbefehlen** zum Kopieren absoluter oder Home-relativer (`~/`) Pfade.
 

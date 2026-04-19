@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-从 Finder 复制文件和文件夹路径到剪贴板 — 即时完成。
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  从 Finder 复制文件和文件夹路径到剪贴板 — 即时完成。
+</p>
 
 一款轻量级原生 macOS 工具，提供**右键上下文菜单**和**全局键盘快捷键**，可复制绝对路径或主目录相对路径（`~/`）。
 

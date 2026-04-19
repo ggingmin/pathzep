@@ -1,6 +1,12 @@
-# PathZep `~/`
+<p align="center">
+  <img src="docs/app-icon.png" alt="PathZep" width="128" />
+</p>
 
-Copia i percorsi di file e cartelle dal Finder negli appunti — istantaneamente.
+<h1 align="center">PathZep <code>~/</code></h1>
+
+<p align="center">
+  Copia i percorsi di file e cartelle dal Finder negli appunti — istantaneamente.
+</p>
 
 Un'utility macOS nativa e leggera che aggiunge un **menu contestuale con clic destro** e **scorciatoie da tastiera globali** per copiare percorsi assoluti o relativi alla home (`~/`).
 
