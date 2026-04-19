@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "הגדרות קיצורי דרך…";
-"menu.quit" = "צא מ‑PathZep";
-"window.shortcut_settings_title" = "הגדרות קיצורי דרך של PathZep";
+"menu.settings" = "הגדרות…";
+"menu.launch_at_login" = "הפעל בכניסה";
+"menu.quit" = "צא מ-PathZep";
+"window.settings_title" = "הגדרות PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "הגדרות קיצורי דרך";
+"settings.shortcuts_title" = "קיצורי מקלדת";
 "settings.copy_absolute_path" = "העתק נתיב מוחלט:";
 "settings.copy_relative_path" = "העתק נתיב יחסי:";
-"settings.click_to_set" = "לחץ כדי להגדיר קיצור דרך";
+"settings.click_to_set" = "לחץ להגדרת קיצור";
 "settings.clear" = "נקה";
-"settings.hint" = "לחץ על שדה ולחץ על קיצור הדרך הרצוי.\nקיצורי דרך גלובליים פועלים מכל יישום.";
+"settings.hint" = "לחץ על השדה והקש את הקיצור הרצוי.\nקיצורים גלובליים עובדים מכל אפליקציה.";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "לחץ על צירוף מקשים…";
+"shortcut.press_combination" = "הקש צירוף מקשים…";
+
+/* Onboarding */
+"onboarding.title" = "!ברוכים הבאים ל-PathZep";
+"onboarding.message" = "PathZep מוכן בשורת התפריטים.\n\nקיצורי ברירת מחדל:\n⌃⇧A — העתק נתיב מוחלט\n⌃⇧R — העתק נתיב יחסי (~/)";
+"onboarding.open_settings" = "פתח הגדרות";
+"onboarding.ok" = "הבנתי";

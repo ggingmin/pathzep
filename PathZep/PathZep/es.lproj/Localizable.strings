@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Ajustes de atajos…";
+"menu.settings" = "Configuración…";
+"menu.launch_at_login" = "Iniciar al iniciar sesión";
 "menu.quit" = "Salir de PathZep";
-"window.shortcut_settings_title" = "Ajustes de atajos de PathZep";
+"window.settings_title" = "Configuración de PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Ajustes de atajos";
+"settings.shortcuts_title" = "Atajos de teclado";
 "settings.copy_absolute_path" = "Copiar ruta absoluta:";
 "settings.copy_relative_path" = "Copiar ruta relativa:";
-"settings.click_to_set" = "Haz clic para asignar un atajo";
+"settings.click_to_set" = "Clic para asignar atajo";
 "settings.clear" = "Borrar";
-"settings.hint" = "Haz clic en un campo y pulsa la combinación de teclas deseada.\nLos atajos globales funcionan desde cualquier app.";
+"settings.hint" = "Haz clic en un campo y presiona el atajo deseado.\nLos atajos globales funcionan desde cualquier app.";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "Pulsa una combinación de teclas…";
+"shortcut.press_combination" = "Presiona una combinación de teclas…";
+
+/* Onboarding */
+"onboarding.title" = "¡Bienvenido a PathZep!";
+"onboarding.message" = "PathZep está listo en la barra de menús.\n\nAtajos predeterminados:\n⌃⇧A — Copiar ruta absoluta\n⌃⇧R — Copiar ruta relativa (~/)";
+"onboarding.open_settings" = "Abrir configuración";
+"onboarding.ok" = "Entendido";

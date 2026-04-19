@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "快捷鍵設定…";
+"menu.settings" = "設定…";
+"menu.launch_at_login" = "登入時啟動";
 "menu.quit" = "結束 PathZep";
-"window.shortcut_settings_title" = "PathZep 快捷鍵設定";
+"window.settings_title" = "PathZep 設定";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "快捷鍵設定";
-"settings.copy_absolute_path" = "拷貝絕對路徑:";
-"settings.copy_relative_path" = "拷貝相對路徑:";
-"settings.click_to_set" = "點按以設定快捷鍵";
+"settings.shortcuts_title" = "鍵盤快捷鍵";
+"settings.copy_absolute_path" = "複製絕對路徑：";
+"settings.copy_relative_path" = "複製相對路徑：";
+"settings.click_to_set" = "點擊設定快捷鍵";
 "settings.clear" = "清除";
-"settings.hint" = "點按輸入欄位，然後按下您想要的快捷鍵組合。\n全域快捷鍵可在任何應用程式中使用。";
+"settings.hint" = "點擊欄位並按下所需的快捷鍵。\n全域快捷鍵適用於所有應用程式。";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "請按下快捷鍵組合…";
+"shortcut.press_combination" = "按下組合鍵…";
+
+/* Onboarding */
+"onboarding.title" = "歡迎使用 PathZep！";
+"onboarding.message" = "PathZep 已在選單列中準備就緒。\n\n預設快捷鍵：\n⌃⇧A — 複製絕對路徑\n⌃⇧R — 複製相對路徑 (~/)";
+"onboarding.open_settings" = "開啟設定";
+"onboarding.ok" = "知道了";

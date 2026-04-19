@@ -10,6 +10,12 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
     private static let absoluteModKey = "absolutePathShortcutModifiers"
     private static let relativeKeyKey = "relativePathShortcutKey"
     private static let relativeModKey = "relativePathShortcutModifiers"
+    private static let hasLaunchedBeforeKey = "hasLaunchedBefore"
+
+    // Default shortcuts: ⌃⇧A (absolute) and ⌃⇧R (relative)
+    private static let defaultAbsoluteKeyCode: UInt32 = 0   // kVK_ANSI_A
+    private static let defaultRelativeKeyCode: UInt32 = 15  // kVK_ANSI_R
+    private static let defaultModifiers: NSEvent.ModifierFlags = [.control, .shift]
 
     private var absoluteHotKeyRef: EventHotKeyRef?
     private var relativeHotKeyRef: EventHotKeyRef?
@@ -31,7 +37,7 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
     private func setupUI() {
         // Title
-        let titleLabel = NSTextField(labelWithString: NSLocalizedString("settings.title", comment: ""))
+        let titleLabel = NSTextField(labelWithString: NSLocalizedString("settings.shortcuts_title", comment: ""))
         titleLabel.font = .boldSystemFont(ofSize: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
@@ -151,6 +157,19 @@ class ShortcutSettingsViewController: NSViewController, NSWindowDelegate {
 
     private func loadShortcuts() {
         let defaults = UserDefaults.standard
+
+        // Set defaults on first launch
+        if !defaults.bool(forKey: Self.hasLaunchedBeforeKey) {
+            defaults.set(true, forKey: Self.hasLaunchedBeforeKey)
+            if defaults.object(forKey: Self.absoluteKeyKey) == nil {
+                defaults.set(Int(Self.defaultAbsoluteKeyCode), forKey: Self.absoluteKeyKey)
+                defaults.set(Int(Self.defaultModifiers.rawValue), forKey: Self.absoluteModKey)
+            }
+            if defaults.object(forKey: Self.relativeKeyKey) == nil {
+                defaults.set(Int(Self.defaultRelativeKeyCode), forKey: Self.relativeKeyKey)
+                defaults.set(Int(Self.defaultModifiers.rawValue), forKey: Self.relativeModKey)
+            }
+        }
 
         if defaults.object(forKey: Self.absoluteKeyKey) != nil {
             let keyCode = UInt32(defaults.integer(forKey: Self.absoluteKeyKey))

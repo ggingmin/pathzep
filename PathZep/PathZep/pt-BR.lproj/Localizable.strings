@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Configurações de Atalhos…";
+"menu.settings" = "Configurações…";
+"menu.launch_at_login" = "Iniciar no login";
 "menu.quit" = "Encerrar PathZep";
-"window.shortcut_settings_title" = "Configurações de Atalhos do PathZep";
+"window.settings_title" = "Configurações do PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Configurações de Atalhos";
-"settings.copy_absolute_path" = "Copiar Caminho Absoluto:";
-"settings.copy_relative_path" = "Copiar Caminho Relativo:";
-"settings.click_to_set" = "Clique para definir o atalho";
+"settings.shortcuts_title" = "Atalhos de teclado";
+"settings.copy_absolute_path" = "Copiar caminho absoluto:";
+"settings.copy_relative_path" = "Copiar caminho relativo:";
+"settings.click_to_set" = "Clique para definir atalho";
 "settings.clear" = "Limpar";
-"settings.hint" = "Clique em um campo e pressione a combinação de teclas desejada.\nOs atalhos globais funcionam em qualquer app.";
+"settings.hint" = "Clique no campo e pressione o atalho desejado.\nAtalhos globais funcionam em qualquer app.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Pressione uma combinação de teclas…";
+
+/* Onboarding */
+"onboarding.title" = "Bem-vindo ao PathZep!";
+"onboarding.message" = "PathZep está pronto na barra de menus.\n\nAtalhos padrão:\n⌃⇧A — Copiar caminho absoluto\n⌃⇧R — Copiar caminho relativo (~/)";
+"onboarding.open_settings" = "Abrir configurações";
+"onboarding.ok" = "Entendi";

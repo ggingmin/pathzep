@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Kısayol Ayarları…";
+"menu.settings" = "Ayarlar…";
+"menu.launch_at_login" = "Girişte başlat";
 "menu.quit" = "PathZep'ten Çık";
-"window.shortcut_settings_title" = "PathZep — Kısayol Ayarları";
+"window.settings_title" = "PathZep Ayarları";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Kısayol Ayarları";
+"settings.shortcuts_title" = "Klavye Kısayolları";
 "settings.copy_absolute_path" = "Mutlak Yolu Kopyala:";
 "settings.copy_relative_path" = "Göreli Yolu Kopyala:";
-"settings.click_to_set" = "Kısayol belirlemek için tıklayın";
+"settings.click_to_set" = "Kısayol atamak için tıklayın";
 "settings.clear" = "Temizle";
-"settings.hint" = "Bir alana tıklayın ve istediğiniz tuş kombinasyonuna basın.\nGenel kısayollar her uygulamadan çalışır.";
+"settings.hint" = "Bir alana tıklayın ve istediğiniz kısayolu tuşlayın.\nGenel kısayollar her uygulamadan çalışır.";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "Bir tuş kombinasyonuna basın…";
+"shortcut.press_combination" = "Bir tuş kombinasyonu basın…";
+
+/* Onboarding */
+"onboarding.title" = "PathZep'e hoş geldiniz!";
+"onboarding.message" = "PathZep menü çubuğunda hazır.\n\nVarsayılan kısayollar:\n⌃⇧A — Mutlak yolu kopyala\n⌃⇧R — Göreli yolu kopyala (~/)";
+"onboarding.open_settings" = "Ayarları aç";
+"onboarding.ok" = "Anladım";

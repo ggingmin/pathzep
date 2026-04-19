@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Réglages des raccourcis…";
+"menu.settings" = "Réglages…";
+"menu.launch_at_login" = "Lancer au démarrage";
 "menu.quit" = "Quitter PathZep";
-"window.shortcut_settings_title" = "Réglages des raccourcis PathZep";
+"window.settings_title" = "Réglages PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Réglages des raccourcis";
+"settings.shortcuts_title" = "Raccourcis clavier";
 "settings.copy_absolute_path" = "Copier le chemin absolu :";
 "settings.copy_relative_path" = "Copier le chemin relatif :";
 "settings.click_to_set" = "Cliquez pour définir un raccourci";
 "settings.clear" = "Effacer";
-"settings.hint" = "Cliquez sur un champ et appuyez sur la combinaison de touches souhaitée.\nLes raccourcis globaux fonctionnent depuis n'importe quelle app.";
+"settings.hint" = "Cliquez sur un champ et appuyez sur le raccourci souhaité.\nLes raccourcis globaux fonctionnent depuis toute application.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Appuyez sur une combinaison de touches…";
+
+/* Onboarding */
+"onboarding.title" = "Bienvenue dans PathZep !";
+"onboarding.message" = "PathZep est prêt dans la barre des menus.\n\nRaccourcis par défaut :\n⌃⇧A — Copier le chemin absolu\n⌃⇧R — Copier le chemin relatif (~/)";
+"onboarding.open_settings" = "Ouvrir les réglages";
+"onboarding.ok" = "Compris";

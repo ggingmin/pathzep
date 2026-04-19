@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "शॉर्टकट सेटिंग्स…";
+"menu.settings" = "सेटिंग्स…";
+"menu.launch_at_login" = "लॉगिन पर शुरू करें";
 "menu.quit" = "PathZep बंद करें";
-"window.shortcut_settings_title" = "PathZep शॉर्टकट सेटिंग्स";
+"window.settings_title" = "PathZep सेटिंग्स";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "शॉर्टकट सेटिंग्स";
+"settings.shortcuts_title" = "कीबोर्ड शॉर्टकट";
 "settings.copy_absolute_path" = "पूर्ण पथ कॉपी करें:";
 "settings.copy_relative_path" = "सापेक्ष पथ कॉपी करें:";
 "settings.click_to_set" = "शॉर्टकट सेट करने के लिए क्लिक करें";
-"settings.clear" = "हटाएँ";
-"settings.hint" = "किसी फ़ील्ड पर क्लिक करें और अपनी इच्छित शॉर्टकट कुंजी दबाएँ।\nग्लोबल शॉर्टकट किसी भी ऐप से काम करते हैं।";
+"settings.clear" = "साफ़ करें";
+"settings.hint" = "फ़ील्ड पर क्लिक करें और अपना शॉर्टकट दबाएं।\nग्लोबल शॉर्टकट किसी भी ऐप से काम करते हैं।";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "कुंजी संयोजन दबाएँ…";
+"shortcut.press_combination" = "कुंजी संयोजन दबाएं…";
+
+/* Onboarding */
+"onboarding.title" = "PathZep में आपका स्वागत है!";
+"onboarding.message" = "PathZep मेनू बार में तैयार है।\n\nडिफ़ॉल्ट शॉर्टकट:\n⌃⇧A — पूर्ण पथ कॉपी करें\n⌃⇧R — सापेक्ष पथ कॉपी करें (~/)";
+"onboarding.open_settings" = "सेटिंग्स खोलें";
+"onboarding.ok" = "समझ गया";

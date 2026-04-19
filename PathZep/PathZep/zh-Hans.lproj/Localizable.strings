@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "快捷键设置…";
+"menu.settings" = "设置…";
+"menu.launch_at_login" = "登录时启动";
 "menu.quit" = "退出 PathZep";
-"window.shortcut_settings_title" = "PathZep 快捷键设置";
+"window.settings_title" = "PathZep 设置";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "快捷键设置";
-"settings.copy_absolute_path" = "复制绝对路径:";
-"settings.copy_relative_path" = "复制相对路径:";
-"settings.click_to_set" = "点击以设置快捷键";
+"settings.shortcuts_title" = "键盘快捷键";
+"settings.copy_absolute_path" = "复制绝对路径：";
+"settings.copy_relative_path" = "复制相对路径：";
+"settings.click_to_set" = "点击设置快捷键";
 "settings.clear" = "清除";
-"settings.hint" = "点击输入框，然后按下您想要的快捷键组合。\n全局快捷键可在任何应用中使用。";
+"settings.hint" = "点击字段并按下所需的快捷键。\n全局快捷键适用于所有应用。";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "请按下快捷键组合…";
+"shortcut.press_combination" = "按下组合键…";
+
+/* Onboarding */
+"onboarding.title" = "欢迎使用 PathZep！";
+"onboarding.message" = "PathZep 已在菜单栏中准备就绪。\n\n默认快捷键：\n⌃⇧A — 复制绝对路径\n⌃⇧R — 复制相对路径 (~/)";
+"onboarding.open_settings" = "打开设置";
+"onboarding.ok" = "知道了";

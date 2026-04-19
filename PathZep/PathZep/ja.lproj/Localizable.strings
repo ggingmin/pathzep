@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "ショートカット設定…";
+"menu.settings" = "設定…";
+"menu.launch_at_login" = "ログイン時に起動";
 "menu.quit" = "PathZep を終了";
-"window.shortcut_settings_title" = "PathZep ショートカット設定";
+"window.settings_title" = "PathZep 設定";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "ショートカット設定";
+"settings.shortcuts_title" = "キーボードショートカット";
 "settings.copy_absolute_path" = "絶対パスをコピー:";
 "settings.copy_relative_path" = "相対パスをコピー:";
 "settings.click_to_set" = "クリックしてショートカットを設定";
 "settings.clear" = "クリア";
-"settings.hint" = "フィールドをクリックして、使用したいショートカットキーを押してください。\nグローバルショートカットはどのアプリからでも使用できます。";
+"settings.hint" = "フィールドをクリックして、希望のショートカットを押してください。\nグローバルショートカットはどのアプリからでも使えます。";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "キーの組み合わせを押してください…";
+
+/* Onboarding */
+"onboarding.title" = "PathZep へようこそ！";
+"onboarding.message" = "PathZep がメニューバーに準備されました。\n\nデフォルトショートカット:\n⌃⇧A — 絶対パスをコピー\n⌃⇧R — 相対パスをコピー (~/)";
+"onboarding.open_settings" = "設定を開く";
+"onboarding.ok" = "了解";

@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Налаштування гарячих клавіш…";
+"menu.settings" = "Налаштування…";
+"menu.launch_at_login" = "Запускати при вході";
 "menu.quit" = "Завершити PathZep";
-"window.shortcut_settings_title" = "PathZep — Налаштування гарячих клавіш";
+"window.settings_title" = "Налаштування PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Налаштування гарячих клавіш";
+"settings.shortcuts_title" = "Комбінації клавіш";
 "settings.copy_absolute_path" = "Копіювати абсолютний шлях:";
 "settings.copy_relative_path" = "Копіювати відносний шлях:";
-"settings.click_to_set" = "Натисніть, щоб задати гарячу клавішу";
+"settings.click_to_set" = "Натисніть для призначення";
 "settings.clear" = "Очистити";
-"settings.hint" = "Натисніть на поле та введіть бажану комбінацію клавіш.\nГлобальні гарячі клавіші працюють з будь-якої програми.";
+"settings.hint" = "Натисніть на поле та введіть бажану комбінацію клавіш.\nГлобальні комбінації працюють з будь-якої програми.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Натисніть комбінацію клавіш…";
+
+/* Onboarding */
+"onboarding.title" = "Ласкаво просимо до PathZep!";
+"onboarding.message" = "PathZep готовий у рядку меню.\n\nСтандартні комбінації:\n⌃⇧A — Копіювати абсолютний шлях\n⌃⇧R — Копіювати відносний шлях (~/)";
+"onboarding.open_settings" = "Відкрити налаштування";
+"onboarding.ok" = "Зрозуміло";

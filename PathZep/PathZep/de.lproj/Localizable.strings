@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Kurzbefehl-Einstellungen …";
+"menu.settings" = "Einstellungen…";
+"menu.launch_at_login" = "Beim Anmelden starten";
 "menu.quit" = "PathZep beenden";
-"window.shortcut_settings_title" = "PathZep Kurzbefehl-Einstellungen";
+"window.settings_title" = "PathZep Einstellungen";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Kurzbefehl-Einstellungen";
+"settings.shortcuts_title" = "Tastenkürzel";
 "settings.copy_absolute_path" = "Absoluten Pfad kopieren:";
 "settings.copy_relative_path" = "Relativen Pfad kopieren:";
-"settings.click_to_set" = "Klicken, um Kurzbefehl festzulegen";
+"settings.click_to_set" = "Klicken, um Kürzel festzulegen";
 "settings.clear" = "Löschen";
-"settings.hint" = "Klicke auf ein Feld und drücke die gewünschte Tastenkombination.\nGlobale Kurzbefehle funktionieren aus jeder App heraus.";
+"settings.hint" = "Klicken Sie auf ein Feld und drücken Sie das gewünschte Tastenkürzel.\nGlobale Kürzel funktionieren in jeder App.";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "Tastenkombination drücken …";
+"shortcut.press_combination" = "Tastenkombination drücken…";
+
+/* Onboarding */
+"onboarding.title" = "Willkommen bei PathZep!";
+"onboarding.message" = "PathZep ist in der Menüleiste bereit.\n\nStandard-Tastenkürzel:\n⌃⇧A — Absoluten Pfad kopieren\n⌃⇧R — Relativen Pfad kopieren (~/)";
+"onboarding.open_settings" = "Einstellungen öffnen";
+"onboarding.ok" = "Verstanden";

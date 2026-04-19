@@ -1,10 +1,11 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Shortcut Settings…";
+"menu.settings" = "Settings…";
+"menu.launch_at_login" = "Launch at Login";
 "menu.quit" = "Quit PathZep";
-"window.shortcut_settings_title" = "PathZep Shortcut Settings";
+"window.settings_title" = "PathZep Settings";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Shortcut Settings";
+"settings.shortcuts_title" = "Keyboard Shortcuts";
 "settings.copy_absolute_path" = "Copy Absolute Path:";
 "settings.copy_relative_path" = "Copy Relative Path:";
 "settings.click_to_set" = "Click to set shortcut";
@@ -13,3 +14,9 @@
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Press a key combination…";
+
+/* Onboarding */
+"onboarding.title" = "Welcome to PathZep!";
+"onboarding.message" = "PathZep is ready in the menu bar.\n\nDefault shortcuts:\n⌃⇧A — Copy Absolute Path\n⌃⇧R — Copy Relative Path (~/)";
+"onboarding.open_settings" = "Open Settings";
+"onboarding.ok" = "Got it";

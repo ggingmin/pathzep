@@ -1,4 +1,5 @@
 import Cocoa
+import ServiceManagement
 
 class StatusBarController {
 
@@ -22,12 +23,33 @@ class StatusBarController {
     private func setupMenu() {
         let menu = NSMenu()
 
-        menu.addItem(withTitle: NSLocalizedString("menu.shortcut_settings", comment: ""), action: #selector(showSettings), keyEquivalent: ",")
+        menu.addItem(withTitle: NSLocalizedString("menu.settings", comment: ""), action: #selector(showSettings), keyEquivalent: ",")
         menu.items.last?.target = self
+
+        let launchItem = NSMenuItem(title: NSLocalizedString("menu.launch_at_login", comment: ""), action: #selector(toggleLaunchAtLogin), keyEquivalent: "")
+        launchItem.target = self
+        launchItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
+        menu.addItem(launchItem)
+
         menu.addItem(.separator())
         menu.addItem(withTitle: NSLocalizedString("menu.quit", comment: ""), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
 
         statusItem.menu = menu
+    }
+
+    @objc private func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+        do {
+            if SMAppService.mainApp.status == .enabled {
+                try SMAppService.mainApp.unregister()
+                sender.state = .off
+            } else {
+                try SMAppService.mainApp.register()
+                sender.state = .on
+            }
+        } catch {
+            let alert = NSAlert(error: error)
+            alert.runModal()
+        }
     }
 
     @objc func showSettings() {
@@ -44,7 +66,7 @@ class StatusBarController {
             backing: .buffered,
             defer: false
         )
-        window.title = NSLocalizedString("window.shortcut_settings_title", comment: "")
+        window.title = NSLocalizedString("window.settings_title", comment: "")
         window.contentViewController = viewController
         window.center()
         window.isReleasedWhenClosed = false

@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "ตั้งค่าปุ่มลัด…";
+"menu.settings" = "การตั้งค่า…";
+"menu.launch_at_login" = "เปิดเมื่อเข้าสู่ระบบ";
 "menu.quit" = "ออกจาก PathZep";
-"window.shortcut_settings_title" = "ตั้งค่าปุ่มลัด PathZep";
+"window.settings_title" = "การตั้งค่า PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "ตั้งค่าปุ่มลัด";
-"settings.copy_absolute_path" = "คัดลอกเส้นทางแบบสัมบูรณ์:";
-"settings.copy_relative_path" = "คัดลอกเส้นทางแบบสัมพัทธ์:";
-"settings.click_to_set" = "คลิกเพื่อตั้งค่าปุ่มลัด";
+"settings.shortcuts_title" = "แป้นพิมพ์ลัด";
+"settings.copy_absolute_path" = "คัดลอกพาธสัมบูรณ์:";
+"settings.copy_relative_path" = "คัดลอกพาธสัมพัทธ์:";
+"settings.click_to_set" = "คลิกเพื่อตั้งค่าทางลัด";
 "settings.clear" = "ล้าง";
-"settings.hint" = "คลิกที่ช่องแล้วกดคีย์ลัดที่ต้องการ\nปุ่มลัดส่วนกลางใช้งานได้จากทุกแอป";
+"settings.hint" = "คลิกที่ช่องแล้วกดแป้นพิมพ์ลัดที่ต้องการ\nแป้นพิมพ์ลัดแบบทั่วไปใช้ได้จากทุกแอป";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "กดคีย์ผสม…";
+
+/* Onboarding */
+"onboarding.title" = "ยินดีต้อนรับสู่ PathZep!";
+"onboarding.message" = "PathZep พร้อมใช้งานในแถบเมนู\n\nแป้นพิมพ์ลัดเริ่มต้น:\n⌃⇧A — คัดลอกพาธสัมบูรณ์\n⌃⇧R — คัดลอกพาธสัมพัทธ์ (~/)";
+"onboarding.open_settings" = "เปิดการตั้งค่า";
+"onboarding.ok" = "เข้าใจแล้ว";

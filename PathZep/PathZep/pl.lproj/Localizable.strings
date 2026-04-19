@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Ustawienia skrótów…";
+"menu.settings" = "Ustawienia…";
+"menu.launch_at_login" = "Uruchom przy logowaniu";
 "menu.quit" = "Zakończ PathZep";
-"window.shortcut_settings_title" = "PathZep — Ustawienia skrótów";
+"window.settings_title" = "Ustawienia PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Ustawienia skrótów";
+"settings.shortcuts_title" = "Skróty klawiszowe";
 "settings.copy_absolute_path" = "Kopiuj ścieżkę bezwzględną:";
 "settings.copy_relative_path" = "Kopiuj ścieżkę względną:";
 "settings.click_to_set" = "Kliknij, aby ustawić skrót";
 "settings.clear" = "Wyczyść";
-"settings.hint" = "Kliknij pole i naciśnij żądaną kombinację klawiszy.\nGlobalne skróty działają z każdej aplikacji.";
+"settings.hint" = "Kliknij pole i naciśnij żądany skrót.\nGlobalne skróty działają z każdej aplikacji.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Naciśnij kombinację klawiszy…";
+
+/* Onboarding */
+"onboarding.title" = "Witaj w PathZep!";
+"onboarding.message" = "PathZep jest gotowy na pasku menu.\n\nDomyślne skróty:\n⌃⇧A — Kopiuj ścieżkę bezwzględną\n⌃⇧R — Kopiuj ścieżkę względną (~/)";
+"onboarding.open_settings" = "Otwórz ustawienia";
+"onboarding.ok" = "Rozumiem";

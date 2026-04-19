@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Sneltoetsinstellingen…";
+"menu.settings" = "Instellingen…";
+"menu.launch_at_login" = "Open bij inloggen";
 "menu.quit" = "Stop PathZep";
-"window.shortcut_settings_title" = "PathZep Sneltoetsinstellingen";
+"window.settings_title" = "PathZep Instellingen";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Sneltoetsinstellingen";
+"settings.shortcuts_title" = "Sneltoetsen";
 "settings.copy_absolute_path" = "Kopieer absoluut pad:";
 "settings.copy_relative_path" = "Kopieer relatief pad:";
 "settings.click_to_set" = "Klik om sneltoets in te stellen";
 "settings.clear" = "Wissen";
-"settings.hint" = "Klik op een veld en druk op de gewenste sneltoets.\nGlobale sneltoetsen werken vanuit elke app.";
+"settings.hint" = "Klik op een veld en druk de gewenste sneltoets.\nGlobale sneltoetsen werken vanuit elke app.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Druk een toetscombinatie…";
+
+/* Onboarding */
+"onboarding.title" = "Welkom bij PathZep!";
+"onboarding.message" = "PathZep is klaar in de menubalk.\n\nStandaard sneltoetsen:\n⌃⇧A — Kopieer absoluut pad\n⌃⇧R — Kopieer relatief pad (~/)";
+"onboarding.open_settings" = "Open instellingen";
+"onboarding.ok" = "Begrepen";

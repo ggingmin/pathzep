@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Pikanäppäinasetukset…";
+"menu.settings" = "Asetukset…";
+"menu.launch_at_login" = "Avaa kirjautuessa";
 "menu.quit" = "Lopeta PathZep";
-"window.shortcut_settings_title" = "PathZep – Pikanäppäinasetukset";
+"window.settings_title" = "PathZep Asetukset";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Pikanäppäinasetukset";
+"settings.shortcuts_title" = "Pikanäppäimet";
 "settings.copy_absolute_path" = "Kopioi absoluuttinen polku:";
 "settings.copy_relative_path" = "Kopioi suhteellinen polku:";
-"settings.click_to_set" = "Aseta pikanäppäin napsauttamalla";
+"settings.click_to_set" = "Napsauta asettaaksesi pikanäppäimen";
 "settings.clear" = "Tyhjennä";
-"settings.hint" = "Napsauta kenttää ja paina haluamaasi pikanäppäintä.\nYleiset pikanäppäimet toimivat mistä tahansa sovelluksesta.";
+"settings.hint" = "Napsauta kenttää ja paina haluamaasi pikanäppäintä.\nYleiset pikanäppäimet toimivat kaikista sovelluksista.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Paina näppäinyhdistelmää…";
+
+/* Onboarding */
+"onboarding.title" = "Tervetuloa PathZepiin!";
+"onboarding.message" = "PathZep on valmis valikkorivissä.\n\nOletuspikanäppäimet:\n⌃⇧A — Kopioi absoluuttinen polku\n⌃⇧R — Kopioi suhteellinen polku (~/)";
+"onboarding.open_settings" = "Avaa asetukset";
+"onboarding.ok" = "Selvä";

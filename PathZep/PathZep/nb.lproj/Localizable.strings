@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Snarveisinnstillinger…";
+"menu.settings" = "Innstillinger…";
+"menu.launch_at_login" = "Åpne ved innlogging";
 "menu.quit" = "Avslutt PathZep";
-"window.shortcut_settings_title" = "PathZep Snarveisinnstillinger";
+"window.settings_title" = "PathZep Innstillinger";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Snarveisinnstillinger";
-"settings.copy_absolute_path" = "Kopier absolutt bane:";
-"settings.copy_relative_path" = "Kopier relativ bane:";
+"settings.shortcuts_title" = "Tastatursnarveier";
+"settings.copy_absolute_path" = "Kopier absolutt sti:";
+"settings.copy_relative_path" = "Kopier relativ sti:";
 "settings.click_to_set" = "Klikk for å angi snarvei";
-"settings.clear" = "Fjern";
-"settings.hint" = "Klikk på et felt og trykk på ønsket snarvei.\nGlobale snarveier fungerer fra alle apper.";
+"settings.clear" = "Tøm";
+"settings.hint" = "Klikk på et felt og trykk ønsket snarvei.\nGlobale snarveier fungerer fra alle apper.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Trykk en tastekombinasjon…";
+
+/* Onboarding */
+"onboarding.title" = "Velkommen til PathZep!";
+"onboarding.message" = "PathZep er klar i menylinjen.\n\nStandardsnarveier:\n⌃⇧A — Kopier absolutt sti\n⌃⇧R — Kopier relativ sti (~/)";
+"onboarding.open_settings" = "Åpne innstillinger";
+"onboarding.ok" = "Forstått";

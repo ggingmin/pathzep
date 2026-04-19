@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "إعدادات الاختصارات…";
+"menu.settings" = "الإعدادات…";
+"menu.launch_at_login" = "التشغيل عند تسجيل الدخول";
 "menu.quit" = "إنهاء PathZep";
-"window.shortcut_settings_title" = "إعدادات اختصارات PathZep";
+"window.settings_title" = "إعدادات PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "إعدادات الاختصارات";
+"settings.shortcuts_title" = "اختصارات لوحة المفاتيح";
 "settings.copy_absolute_path" = "نسخ المسار المطلق:";
 "settings.copy_relative_path" = "نسخ المسار النسبي:";
 "settings.click_to_set" = "انقر لتعيين الاختصار";
 "settings.clear" = "مسح";
-"settings.hint" = "انقر على حقل واضغط على مجموعة المفاتيح المطلوبة.\nالاختصارات العامة تعمل من أي تطبيق.";
+"settings.hint" = "انقر على الحقل واضغط الاختصار المطلوب.\nالاختصارات العامة تعمل من أي تطبيق.";
 
 /* ShortcutRecorderField */
-"shortcut.press_combination" = "اضغط على مجموعة مفاتيح…";
+"shortcut.press_combination" = "اضغط مجموعة مفاتيح…";
+
+/* Onboarding */
+"onboarding.title" = "!مرحباً بك في PathZep";
+"onboarding.message" = "PathZep جاهز في شريط القوائم.\n\nالاختصارات الافتراضية:\n⌃⇧A — نسخ المسار المطلق\n⌃⇧R — نسخ المسار النسبي (~/)";
+"onboarding.open_settings" = "فتح الإعدادات";
+"onboarding.ok" = "حسناً";

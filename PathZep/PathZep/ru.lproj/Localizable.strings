@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Настройки горячих клавиш…";
+"menu.settings" = "Настройки…";
+"menu.launch_at_login" = "Запускать при входе";
 "menu.quit" = "Завершить PathZep";
-"window.shortcut_settings_title" = "PathZep — Настройки горячих клавиш";
+"window.settings_title" = "Настройки PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Настройки горячих клавиш";
+"settings.shortcuts_title" = "Сочетания клавиш";
 "settings.copy_absolute_path" = "Копировать абсолютный путь:";
 "settings.copy_relative_path" = "Копировать относительный путь:";
-"settings.click_to_set" = "Нажмите, чтобы задать сочетание";
-"settings.clear" = "Сбросить";
+"settings.click_to_set" = "Нажмите для назначения";
+"settings.clear" = "Очистить";
 "settings.hint" = "Нажмите на поле и введите нужное сочетание клавиш.\nГлобальные сочетания работают из любого приложения.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Нажмите сочетание клавиш…";
+
+/* Onboarding */
+"onboarding.title" = "Добро пожаловать в PathZep!";
+"onboarding.message" = "PathZep готов к работе в строке меню.\n\nСочетания по умолчанию:\n⌃⇧A — Копировать абсолютный путь\n⌃⇧R — Копировать относительный путь (~/)";
+"onboarding.open_settings" = "Открыть настройки";
+"onboarding.ok" = "Понятно";

@@ -1,10 +1,11 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "단축키 설정…";
+"menu.settings" = "설정…";
+"menu.launch_at_login" = "로그인 시 자동 실행";
 "menu.quit" = "PathZep 종료";
-"window.shortcut_settings_title" = "PathZep 단축키 설정";
+"window.settings_title" = "PathZep 설정";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "단축키 설정";
+"settings.shortcuts_title" = "키보드 단축키";
 "settings.copy_absolute_path" = "절대 경로 복사:";
 "settings.copy_relative_path" = "상대 경로 복사:";
 "settings.click_to_set" = "클릭하여 단축키 설정";
@@ -13,3 +14,9 @@
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "키 조합을 누르세요…";
+
+/* Onboarding */
+"onboarding.title" = "PathZep에 오신 것을 환영합니다!";
+"onboarding.message" = "PathZep이 메뉴 막대에 준비되었습니다.\n\n기본 단축키:\n⌃⇧A — 절대 경로 복사\n⌃⇧R — 상대 경로 복사 (~/)";
+"onboarding.open_settings" = "설정 열기";
+"onboarding.ok" = "확인";

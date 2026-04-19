@@ -1,15 +1,22 @@
 /* Main App - StatusBarController */
-"menu.shortcut_settings" = "Tetapan Pintasan…";
+"menu.settings" = "Tetapan…";
+"menu.launch_at_login" = "Buka semasa log masuk";
 "menu.quit" = "Keluar PathZep";
-"window.shortcut_settings_title" = "Tetapan Pintasan PathZep";
+"window.settings_title" = "Tetapan PathZep";
 
 /* Main App - ShortcutSettingsViewController */
-"settings.title" = "Tetapan Pintasan";
-"settings.copy_absolute_path" = "Salin Laluan Mutlak:";
-"settings.copy_relative_path" = "Salin Laluan Relatif:";
-"settings.click_to_set" = "Klik untuk menetapkan pintasan";
+"settings.shortcuts_title" = "Pintasan Papan Kekunci";
+"settings.copy_absolute_path" = "Salin laluan mutlak:";
+"settings.copy_relative_path" = "Salin laluan relatif:";
+"settings.click_to_set" = "Klik untuk tetapkan pintasan";
 "settings.clear" = "Kosongkan";
-"settings.hint" = "Klik pada medan dan tekan pintasan yang dikehendaki.\nPintasan global berfungsi dari mana-mana aplikasi.";
+"settings.hint" = "Klik medan dan tekan pintasan yang dikehendaki.\nPintasan global berfungsi dari mana-mana aplikasi.";
 
 /* ShortcutRecorderField */
 "shortcut.press_combination" = "Tekan kombinasi kekunci…";
+
+/* Onboarding */
+"onboarding.title" = "Selamat datang ke PathZep!";
+"onboarding.message" = "PathZep sedia di bar menu.\n\nPintasan lalai:\n⌃⇧A — Salin laluan mutlak\n⌃⇧R — Salin laluan relatif (~/)";
+"onboarding.open_settings" = "Buka tetapan";
+"onboarding.ok" = "Faham";
