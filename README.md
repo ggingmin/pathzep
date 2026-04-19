@@ -1,74 +1,76 @@
-# PathZep 🗂️
+# PathZep ~/
 
-Finder에서 파일/폴더의 **절대 경로** 또는 **상대 경로**를 클립보드에 복사하는 macOS 유틸리티.
+Copy file and folder paths from Finder to your clipboard — instantly.
 
-## 기능
+A lightweight, native macOS utility that adds **right-click context menu** and **global keyboard shortcuts** for copying absolute or home-relative (`~/`) paths.
 
-- **절대 경로 복사** — 파일/폴더의 전체 경로 복사 (예: `/Users/me/projects/myapp/src/index.ts`)
-- **상대 경로 복사** — 현재 Finder 폴더 기준 상대 경로 복사 (예: `src/index.ts`)
-- 여러 파일 선택 시 줄바꿈으로 구분하여 복사
-- 단축키 지정 가능
+## Features
 
-## 설치 방법
+- **Absolute path** — Copy the full POSIX path (e.g. `/Users/me/projects/app/src/index.ts`)
+- **Relative path** — Copy the home-relative path with tilde (e.g. `~/projects/app/src/index.ts`)
+- **Finder context menu** — Right-click any file or folder in Finder
+- **Global shortcuts** — Configure custom hotkeys that work from any app
+- **Menu bar app** — Runs quietly in the menu bar, no Dock icon
+- **Multi-select** — Select multiple files and copy all paths at once (newline-separated)
 
-### 방법 1: Quick Action (Xcode 불필요, 바로 사용)
+## Installation
+
+### Download (recommended)
+
+1. Download the latest DMG from [Releases](https://github.com/ggingmin/pathzep/releases/latest)
+2. Open the DMG and drag **PathZep.app** to **Applications**
+3. Launch PathZep
+4. Enable the Finder extension:  
+   **System Settings → Privacy & Security → Extensions → PathZep**
+
+### Build from source
+
+Requires Xcode 15+.
 
 ```bash
-./AutomatorActions/install-quick-actions.sh
+git clone https://github.com/ggingmin/pathzep.git
+cd pathzep
+./scripts/build-dmg.sh
+open build/PathZep.dmg
 ```
 
-설치 후 Finder에서 파일/폴더를 **우클릭 → 빠른 동작(Quick Actions)**에서 사용할 수 있습니다.
+## Usage
 
-**제거:**
+### Right-click in Finder
+
+After enabling the extension, right-click any file or folder in Finder to see:
+
+- **절대 경로 복사** — Copy absolute path
+- **상대 경로 복사** — Copy relative path (`~/`)
+
+### Global shortcuts
+
+1. Click the `~/` icon in the menu bar
+2. Select **단축키 설정…** (Shortcut settings)
+3. Click a field and press your desired key combination (e.g. `⌃⌥⌘C`)
+
+Shortcuts work globally — copy paths from Finder while in any app.
+
+## Quick Actions (alternative)
+
+If you prefer Automator Quick Actions over the Finder extension:
+
 ```bash
+# Install
+./AutomatorActions/install-quick-actions.sh
+
+# Uninstall
 ./AutomatorActions/uninstall-quick-actions.sh
 ```
 
-### 방법 2: Finder Sync Extension (Xcode 필요)
+Quick Actions appear under **right-click → Quick Actions** in Finder.  
+You can assign keyboard shortcuts in **System Settings → Keyboard → Keyboard Shortcuts → Services**.
 
-네이티브 Finder 확장으로, 우클릭 메뉴 최상위에 바로 표시됩니다.
+## Requirements
 
-1. Xcode에서 `PathZep/PathZep.xcodeproj`를 엽니다
-2. 본인의 Developer Team을 설정합니다 (Signing & Capabilities)
-3. `PathZep` 스킴으로 빌드 & 실행합니다
-4. 시스템 설정 → 로그인 항목 및 확장 프로그램에서 **PathZep Finder** 확장을 활성화합니다
+- macOS 12 Monterey or later
+- Intel and Apple Silicon supported
 
-## 단축키 설정
+## License
 
-Quick Action 방식 사용 시:
-
-1. **시스템 설정** → **키보드** → **키보드 단축키** → **서비스**
-2. **파일 및 폴더** 섹션에서 찾기:
-   - `절대 경로 복사` — 추천: `⌃⌥⌘C`
-   - `상대 경로 복사` — 추천: `⌃⇧⌘C`
-
-## 프로젝트 구조
-
-```
-pathzap/
-├── PathZep/                          # Xcode 프로젝트 (Finder Sync Extension)
-│   ├── PathZep.xcodeproj/
-│   ├── PathZep/                      # 메인 앱 (호스트)
-│   │   ├── AppDelegate.swift
-│   │   ├── ViewController.swift
-│   │   ├── Main.storyboard
-│   │   ├── Info.plist
-│   │   └── PathZep.entitlements
-│   └── PathZepFinder/                # Finder Sync Extension
-│       ├── FinderSync.swift
-│       ├── Info.plist
-│       └── PathZepFinder.entitlements
-├── AutomatorActions/                 # Quick Action 대안
-│   ├── install-quick-actions.sh
-│   └── uninstall-quick-actions.sh
-└── README.md
-```
-
-## 요구사항
-
-- **Quick Action**: macOS 12 Monterey 이상
-- **Finder Sync Extension**: macOS 13 Ventura 이상, Xcode 15+
-
-## 라이선스
-
-MIT
+[MIT](LICENSE)
