@@ -313,12 +313,14 @@ struct RecordedShortcut {
     let modifiers: NSEvent.ModifierFlags
 }
 
-class ShortcutRecorderField: NSTextField {
+class ShortcutRecorderField: NSView {
 
     var recordedShortcut: RecordedShortcut?
     var onShortcutChanged: (() -> Void)?
+    var placeholderString: String = ""
 
     private var isRecording = false
+    private let label = NSTextField(labelWithString: "")
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -331,23 +333,58 @@ class ShortcutRecorderField: NSTextField {
     }
 
     private func setup() {
-        isEditable = false
-        isSelectable = false
-        alignment = .center
-        font = .systemFont(ofSize: 13)
         wantsLayer = true
         layer?.cornerRadius = 4
         layer?.borderWidth = 1
         layer?.borderColor = NSColor.separatorColor.cgColor
+        layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+
+        label.isEditable = false
+        label.isSelectable = false
+        label.isBezeled = false
+        label.drawsBackground = false
+        label.alignment = .center
+        label.font = .systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
     }
 
     override var acceptsFirstResponder: Bool { true }
+    override var canBecomeKeyView: Bool { true }
 
     override func mouseDown(with event: NSEvent) {
         window?.makeFirstResponder(self)
         isRecording = true
-        stringValue = "Press a key combination…"
+        label.stringValue = "Press a key combination…"
+        label.textColor = .secondaryLabelColor
         layer?.borderColor = NSColor.controlAccentColor.cgColor
+    }
+
+    override func becomeFirstResponder() -> Bool {
+        let result = super.becomeFirstResponder()
+        if result {
+            layer?.borderColor = NSColor.controlAccentColor.cgColor
+        }
+        return result
+    }
+
+    override func resignFirstResponder() -> Bool {
+        let result = super.resignFirstResponder()
+        if result {
+            isRecording = false
+            layer?.borderColor = NSColor.separatorColor.cgColor
+            if label.stringValue == "Press a key combination…" {
+                label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
+                label.textColor = .labelColor
+            }
+        }
+        return result
     }
 
     // Modifier-only key codes to ignore
@@ -373,7 +410,8 @@ class ShortcutRecorderField: NSTextField {
             // ESC cancels recording
             if event.keyCode == 53 {
                 isRecording = false
-                stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
+                label.stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
+                label.textColor = .labelColor
                 layer?.borderColor = NSColor.separatorColor.cgColor
             }
             return
@@ -392,12 +430,14 @@ class ShortcutRecorderField: NSTextField {
 
     func setShortcut(keyCode: UInt32, modifiers: NSEvent.ModifierFlags) {
         recordedShortcut = RecordedShortcut(keyCode: keyCode, modifiers: modifiers)
-        stringValue = shortcutDisplayString(keyCode: keyCode, modifiers: modifiers)
+        label.stringValue = shortcutDisplayString(keyCode: keyCode, modifiers: modifiers)
+        label.textColor = .labelColor
     }
 
     func clear() {
         recordedShortcut = nil
-        stringValue = ""
+        label.stringValue = ""
+        label.textColor = .labelColor
         isRecording = false
         layer?.borderColor = NSColor.separatorColor.cgColor
     }
