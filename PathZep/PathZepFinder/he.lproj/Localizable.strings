@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "העתק נתיב מוחלט";
+"finder.copy_relative_path" = "העתק נתיב יחסי";

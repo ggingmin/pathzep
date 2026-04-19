@@ -1,25 +1,25 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Bahasa Indonesia](README.id.md) | [Türkçe](README.tr.md)
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | **Türkçe** | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
 
 # PathZep `~/`
 
 Finder'dan dosya ve klasör yollarını panonuza kopyalayın — anında.
 
-Mutlak veya ana dizine göre (`~/`) yolları kopyalamak için **sağ tık bağlam menüsü** ve **genel klavye kısayolları** ekleyen hafif, yerel bir macOS aracı.
+**Sağ tıklama bağlam menüsü** ve **genel klavye kısayolları** ile mutlak veya ev dizinine göre (`~/`) yolları kopyalamanızı sağlayan hafif, yerel bir macOS aracı.
 
 ## Özellikler
 
-- **Mutlak yol** — Tam POSIX yolunu kopyalayın (örn. `/Users/me/projects/app/src/index.ts`)
-- **Göreli yol** — Tilde ile ana dizine göre yolu kopyalayın (örn. `~/projects/app/src/index.ts`)
+- **Mutlak yol** — Tam POSIX yolunu kopyalar (ör. `/Users/me/projects/app/src/index.ts`)
+- **Göreli yol** — Tilde ile ev dizinine göre yolu kopyalar (ör. `~/projects/app/src/index.ts`)
 - **Finder bağlam menüsü** — Finder'da herhangi bir dosya veya klasöre sağ tıklayın
 - **Genel kısayollar** — Herhangi bir uygulamadan çalışan özel kısayol tuşları ayarlayın
-- **Menü çubuğu uygulaması** — Menü çubuğunda sessizce çalışır, Dock'ta simge yok
-- **Çoklu seçim** — Birden fazla dosya seçin ve tüm yolları aynı anda kopyalayın (yeni satırla ayrılmış)
+- **Menü çubuğu uygulaması** — Menü çubuğunda sessizce çalışır, Dock simgesi yok
+- **Çoklu seçim** — Birden fazla dosya seçin ve tüm yolları tek seferde kopyalayın (satır sonu ile ayrılmış)
 
 ## Kurulum
 
 ### İndirme (önerilen)
 
-1. [Sürümler](https://github.com/ggingmin/pathzep/releases/latest) sayfasından en son DMG'yi indirin
+1. [Releases](https://github.com/ggingmin/pathzep/releases/latest) sayfasından en son DMG'yi indirin
 2. DMG'yi açın ve **PathZep.app**'i **Uygulamalar**'a sürükleyin
 3. PathZep'i başlatın
 4. Finder eklentisini etkinleştirin:  
@@ -27,7 +27,7 @@ Mutlak veya ana dizine göre (`~/`) yolları kopyalamak için **sağ tık bağla
 
 ### Kaynak koddan derleme
 
-Xcode 15+ gereklidir.
+Xcode 15 veya üstü gereklidir.
 
 ```bash
 git clone https://github.com/ggingmin/pathzep.git
@@ -42,35 +42,35 @@ open build/PathZep.dmg
 
 Eklentiyi etkinleştirdikten sonra, Finder'da herhangi bir dosya veya klasöre sağ tıklayarak şunları görebilirsiniz:
 
-- **Mutlak Yolu Kopyala** — örn. `/Users/me/projects/app/src/index.ts`
-- **Göreli Yolu Kopyala** — örn. `~/projects/app/src/index.ts`
+- **Copy Absolute Path** — ör. `/Users/me/projects/app/src/index.ts`
+- **Copy Relative Path** — ör. `~/projects/app/src/index.ts`
 
 ### Genel kısayollar
 
 1. Menü çubuğundaki `~/` simgesine tıklayın
 2. **Kısayol Ayarları…**'nı seçin
-3. Bir alana tıklayın ve istediğiniz tuş kombinasyonuna basın (örn. `⌃⌥⌘C`)
+3. Bir alana tıklayın ve istediğiniz tuş kombinasyonuna basın (ör. `⌃⌥⌘C`)
 
 Kısayollar genel olarak çalışır — herhangi bir uygulamadayken Finder'dan yolları kopyalayın.
 
-## Hızlı Eylemler (alternatif)
+## Quick Actions (alternatif)
 
-Finder eklentisi yerine Automator Hızlı Eylemlerini tercih ediyorsanız:
+Finder eklentisi yerine Automator Quick Actions'ı tercih ediyorsanız:
 
 ```bash
-# Kur
+# Kurulum
 ./AutomatorActions/install-quick-actions.sh
 
-# Kaldır
+# Kaldırma
 ./AutomatorActions/uninstall-quick-actions.sh
 ```
 
-Hızlı Eylemler, Finder'da **sağ tık → Hızlı Eylemler** altında görünür.  
+Quick Actions, Finder'da **sağ tıklama → Hızlı Eylemler** altında görünür.  
 **Sistem Ayarları → Klavye → Klavye Kısayolları → Servisler** bölümünden klavye kısayolları atayabilirsiniz.
 
 ## Gereksinimler
 
-- macOS 12 Monterey veya üzeri
+- macOS 12 Monterey veya üstü
 - Intel ve Apple Silicon desteklenir
 
 ## Lisans

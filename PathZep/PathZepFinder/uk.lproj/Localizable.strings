@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "Копіювати абсолютний шлях";
+"finder.copy_relative_path" = "Копіювати відносний шлях";

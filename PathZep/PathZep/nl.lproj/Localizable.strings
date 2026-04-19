@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Sneltoetsinstellingen…";
+"menu.quit" = "Stop PathZep";
+"window.shortcut_settings_title" = "PathZep Sneltoetsinstellingen";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Sneltoetsinstellingen";
+"settings.copy_absolute_path" = "Kopieer absoluut pad:";
+"settings.copy_relative_path" = "Kopieer relatief pad:";
+"settings.click_to_set" = "Klik om sneltoets in te stellen";
+"settings.clear" = "Wissen";
+"settings.hint" = "Klik op een veld en druk op de gewenste sneltoets.\nGlobale sneltoetsen werken vanuit elke app.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Druk een toetscombinatie…";

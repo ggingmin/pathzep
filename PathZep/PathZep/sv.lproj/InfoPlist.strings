@@ -1,0 +1,2 @@
+/* Info.plist localization */
+"NSAppleEventsUsageDescription" = "PathZep behöver åtkomst för att hämta sökvägen till filer som är markerade i Finder.";

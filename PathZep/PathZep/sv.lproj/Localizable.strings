@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Kortkommandon…";
+"menu.quit" = "Avsluta PathZep";
+"window.shortcut_settings_title" = "PathZep — Kortkommandon";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Kortkommandon";
+"settings.copy_absolute_path" = "Kopiera absolut sökväg:";
+"settings.copy_relative_path" = "Kopiera relativ sökväg:";
+"settings.click_to_set" = "Klicka för att ange kortkommando";
+"settings.clear" = "Rensa";
+"settings.hint" = "Klicka på ett fält och tryck på önskat kortkommando.\nGlobala kortkommandon fungerar från alla appar.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Tryck en tangentkombination…";

@@ -1,4 +1,4 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Bahasa Indonesia](README.id.md) | [Türkçe](README.tr.md)
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | **Русский** | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
 
 # PathZep `~/`
 
@@ -8,18 +8,18 @@
 
 ## Возможности
 
-- **Абсолютный путь** — Копирование полного POSIX-пути (например, `/Users/me/projects/app/src/index.ts`)
-- **Относительный путь** — Копирование пути относительно домашней директории с тильдой (например, `~/projects/app/src/index.ts`)
-- **Контекстное меню Finder** — Правый клик по любому файлу или папке в Finder
+- **Абсолютный путь** — Копирует полный POSIX-путь (например, `/Users/me/projects/app/src/index.ts`)
+- **Относительный путь** — Копирует путь относительно домашней директории с тильдой (например, `~/projects/app/src/index.ts`)
+- **Контекстное меню Finder** — Щёлкните правой кнопкой мыши по любому файлу или папке в Finder
 - **Глобальные сочетания клавиш** — Настройте собственные горячие клавиши, работающие из любого приложения
 - **Приложение в строке меню** — Работает тихо в строке меню, без значка в Dock
-- **Множественный выбор** — Выберите несколько файлов и скопируйте все пути сразу (разделённые переносом строки)
+- **Множественный выбор** — Выберите несколько файлов и скопируйте все пути сразу (разделённые переводом строки)
 
 ## Установка
 
 ### Скачать (рекомендуется)
 
-1. Скачайте последний DMG из раздела [Релизы](https://github.com/ggingmin/pathzep/releases/latest)
+1. Скачайте последний DMG из [Releases](https://github.com/ggingmin/pathzep/releases/latest)
 2. Откройте DMG и перетащите **PathZep.app** в **Программы**
 3. Запустите PathZep
 4. Включите расширение Finder:  
@@ -27,7 +27,7 @@
 
 ### Сборка из исходного кода
 
-Требуется Xcode 15+.
+Требуется Xcode 15 или новее.
 
 ```bash
 git clone https://github.com/ggingmin/pathzep.git
@@ -40,22 +40,22 @@ open build/PathZep.dmg
 
 ### Правый клик в Finder
 
-После включения расширения нажмите правой кнопкой мыши на любой файл или папку в Finder, чтобы увидеть:
+После включения расширения щёлкните правой кнопкой мыши по любому файлу или папке в Finder, чтобы увидеть:
 
-- **Копировать абсолютный путь** — например, `/Users/me/projects/app/src/index.ts`
-- **Копировать относительный путь** — например, `~/projects/app/src/index.ts`
+- **Copy Absolute Path** — например, `/Users/me/projects/app/src/index.ts`
+- **Copy Relative Path** — например, `~/projects/app/src/index.ts`
 
 ### Глобальные сочетания клавиш
 
 1. Нажмите на значок `~/` в строке меню
 2. Выберите **Настройки сочетаний клавиш…**
-3. Нажмите на поле и введите желаемую комбинацию клавиш (например, `⌃⌥⌘C`)
+3. Нажмите на поле и введите нужную комбинацию клавиш (например, `⌃⌥⌘C`)
 
-Сочетания клавиш работают глобально — копируйте пути из Finder, находясь в любом приложении.
+Сочетания работают глобально — копируйте пути из Finder, находясь в любом приложении.
 
-## Быстрые действия (альтернатива)
+## Quick Actions (альтернатива)
 
-Если вы предпочитаете быстрые действия Automator вместо расширения Finder:
+Если вы предпочитаете Automator Quick Actions вместо расширения Finder:
 
 ```bash
 # Установить
@@ -65,7 +65,7 @@ open build/PathZep.dmg
 ./AutomatorActions/uninstall-quick-actions.sh
 ```
 
-Быстрые действия отображаются в **правый клик → Быстрые действия** в Finder.  
+Quick Actions отображаются в **правый клик → Быстрые действия** в Finder.  
 Вы можете назначить сочетания клавиш в **Системные настройки → Клавиатура → Сочетания клавиш → Службы**.
 
 ## Требования

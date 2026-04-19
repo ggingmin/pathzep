@@ -1,17 +1,17 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Bahasa Indonesia](README.id.md) | [Türkçe](README.tr.md)
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) | [Tiếng Việt](README.vi.md) | **ไทย** | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
 
 # PathZep `~/`
 
-คัดลอกเส้นทางไฟล์และโฟลเดอร์จาก Finder ไปยังคลิปบอร์ดของคุณ — ทันที
+คัดลอกเส้นทางไฟล์และโฟลเดอร์จาก Finder ไปยังคลิปบอร์ด — ทันที
 
-ยูทิลิตี้ macOS แบบเนทีฟน้ำหนักเบา ที่เพิ่ม**เมนูคลิกขวา**และ**ปุ่มลัดแป้นพิมพ์ทั่วระบบ**สำหรับคัดลอกเส้นทางแบบสัมบูรณ์หรือแบบสัมพัทธ์กับโฮม (`~/`)
+ยูทิลิตี้ macOS แบบเนทีฟที่เบาและรวดเร็ว เพิ่ม**เมนูคลิกขวา**และ**คีย์ลัดแป้นพิมพ์ทั่วระบบ**สำหรับคัดลอกเส้นทางแบบสัมบูรณ์หรือแบบสัมพัทธ์กับโฮม (`~/`)
 
 ## คุณสมบัติ
 
 - **เส้นทางสัมบูรณ์** — คัดลอกเส้นทาง POSIX แบบเต็ม (เช่น `/Users/me/projects/app/src/index.ts`)
-- **เส้นทางสัมพัทธ์** — คัดลอกเส้นทางสัมพัทธ์กับโฮมพร้อมเครื่องหมายทิลเดอ (เช่น `~/projects/app/src/index.ts`)
-- **เมนูคลิกขวาใน Finder** — คลิกขวาที่ไฟล์หรือโฟลเดอร์ใดก็ได้ใน Finder
-- **ปุ่มลัดทั่วระบบ** — ตั้งค่าปุ่มลัดที่กำหนดเองซึ่งใช้งานได้จากทุกแอป
+- **เส้นทางสัมพัทธ์** — คัดลอกเส้นทางสัมพัทธ์กับโฮมพร้อมเครื่องหมายตัวหนอน (เช่น `~/projects/app/src/index.ts`)
+- **เมนูบริบท Finder** — คลิกขวาที่ไฟล์หรือโฟลเดอร์ใดก็ได้ใน Finder
+- **คีย์ลัดทั่วระบบ** — ตั้งค่าคีย์ลัดที่กำหนดเองซึ่งใช้งานได้จากทุกแอป
 - **แอปแถบเมนู** — ทำงานเงียบ ๆ ในแถบเมนู ไม่มีไอคอนใน Dock
 - **เลือกหลายรายการ** — เลือกหลายไฟล์และคัดลอกเส้นทางทั้งหมดพร้อมกัน (คั่นด้วยบรรทัดใหม่)
 
@@ -27,7 +27,7 @@
 
 ### สร้างจากซอร์สโค้ด
 
-ต้องใช้ Xcode 15+
+ต้องใช้ Xcode 15 ขึ้นไป
 
 ```bash
 git clone https://github.com/ggingmin/pathzep.git
@@ -40,22 +40,22 @@ open build/PathZep.dmg
 
 ### คลิกขวาใน Finder
 
-หลังจากเปิดใช้งานส่วนขยายแล้ว ให้คลิกขวาที่ไฟล์หรือโฟลเดอร์ใดก็ได้ใน Finder เพื่อดู:
+หลังจากเปิดใช้งานส่วนขยายแล้ว คลิกขวาที่ไฟล์หรือโฟลเดอร์ใดก็ได้ใน Finder จะเห็น:
 
-- **คัดลอกเส้นทางสัมบูรณ์** — เช่น `/Users/me/projects/app/src/index.ts`
-- **คัดลอกเส้นทางสัมพัทธ์** — เช่น `~/projects/app/src/index.ts`
+- **Copy Absolute Path** — เช่น `/Users/me/projects/app/src/index.ts`
+- **Copy Relative Path** — เช่น `~/projects/app/src/index.ts`
 
-### ปุ่มลัดทั่วระบบ
+### คีย์ลัดทั่วระบบ
 
 1. คลิกไอคอน `~/` ในแถบเมนู
-2. เลือก **ตั้งค่าปุ่มลัด…**
+2. เลือก **ตั้งค่าคีย์ลัด…**
 3. คลิกที่ช่องแล้วกดคีย์ผสมที่ต้องการ (เช่น `⌃⌥⌘C`)
 
-ปุ่มลัดทำงานได้ทั่วระบบ — คัดลอกเส้นทางจาก Finder ขณะอยู่ในแอปใดก็ได้
+คีย์ลัดทำงานทั่วระบบ — คัดลอกเส้นทางจาก Finder ขณะอยู่ในแอปใดก็ได้
 
-## การดำเนินการด่วน (ทางเลือก)
+## Quick Actions (ทางเลือก)
 
-หากคุณต้องการใช้การดำเนินการด่วนของ Automator แทนส่วนขยาย Finder:
+หากคุณชอบ Automator Quick Actions มากกว่าส่วนขยาย Finder:
 
 ```bash
 # ติดตั้ง
@@ -65,13 +65,13 @@ open build/PathZep.dmg
 ./AutomatorActions/uninstall-quick-actions.sh
 ```
 
-การดำเนินการด่วนจะปรากฏใต้ **คลิกขวา → การดำเนินการด่วน** ใน Finder  
-คุณสามารถกำหนดปุ่มลัดแป้นพิมพ์ได้ใน **การตั้งค่าระบบ → แป้นพิมพ์ → ปุ่มลัดแป้นพิมพ์ → บริการ**
+Quick Actions จะปรากฏใต้ **คลิกขวา → การทำงานด่วน** ใน Finder  
+คุณสามารถกำหนดคีย์ลัดได้ใน **การตั้งค่าระบบ → แป้นพิมพ์ → คีย์ลัดแป้นพิมพ์ → บริการ**
 
 ## ความต้องการของระบบ
 
 - macOS 12 Monterey หรือใหม่กว่า
-- รองรับทั้ง Intel และ Apple Silicon
+- รองรับ Intel และ Apple Silicon
 
 ## สัญญาอนุญาต
 

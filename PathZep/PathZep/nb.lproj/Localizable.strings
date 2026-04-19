@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Snarveisinnstillinger…";
+"menu.quit" = "Avslutt PathZep";
+"window.shortcut_settings_title" = "PathZep Snarveisinnstillinger";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Snarveisinnstillinger";
+"settings.copy_absolute_path" = "Kopier absolutt bane:";
+"settings.copy_relative_path" = "Kopier relativ bane:";
+"settings.click_to_set" = "Klikk for å angi snarvei";
+"settings.clear" = "Fjern";
+"settings.hint" = "Klikk på et felt og trykk på ønsket snarvei.\nGlobale snarveier fungerer fra alle apper.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Trykk en tastekombinasjon…";

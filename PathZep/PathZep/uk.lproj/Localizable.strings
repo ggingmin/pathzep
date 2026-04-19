@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "Налаштування гарячих клавіш…";
+"menu.quit" = "Завершити PathZep";
+"window.shortcut_settings_title" = "PathZep — Налаштування гарячих клавіш";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "Налаштування гарячих клавіш";
+"settings.copy_absolute_path" = "Копіювати абсолютний шлях:";
+"settings.copy_relative_path" = "Копіювати відносний шлях:";
+"settings.click_to_set" = "Натисніть, щоб задати гарячу клавішу";
+"settings.clear" = "Очистити";
+"settings.hint" = "Натисніть на поле та введіть бажану комбінацію клавіш.\nГлобальні гарячі клавіші працюють з будь-якої програми.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "Натисніть комбінацію клавіш…";

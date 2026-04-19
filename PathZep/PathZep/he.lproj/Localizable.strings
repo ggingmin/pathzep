@@ -1,0 +1,15 @@
+/* Main App - StatusBarController */
+"menu.shortcut_settings" = "הגדרות קיצורי דרך…";
+"menu.quit" = "צא מ‑PathZep";
+"window.shortcut_settings_title" = "הגדרות קיצורי דרך של PathZep";
+
+/* Main App - ShortcutSettingsViewController */
+"settings.title" = "הגדרות קיצורי דרך";
+"settings.copy_absolute_path" = "העתק נתיב מוחלט:";
+"settings.copy_relative_path" = "העתק נתיב יחסי:";
+"settings.click_to_set" = "לחץ כדי להגדיר קיצור דרך";
+"settings.clear" = "נקה";
+"settings.hint" = "לחץ על שדה ולחץ על קיצור הדרך הרצוי.\nקיצורי דרך גלובליים פועלים מכל יישום.";
+
+/* ShortcutRecorderField */
+"shortcut.press_combination" = "לחץ על צירוף מקשים…";

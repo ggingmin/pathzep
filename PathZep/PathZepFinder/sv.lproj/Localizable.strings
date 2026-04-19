@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "Kopiera absolut sökväg";
+"finder.copy_relative_path" = "Kopiera relativ sökväg";

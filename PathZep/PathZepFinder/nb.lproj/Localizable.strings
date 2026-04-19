@@ -1,0 +1,3 @@
+/* Finder Extension - Context Menu */
+"finder.copy_absolute_path" = "Kopier absolutt bane";
+"finder.copy_relative_path" = "Kopier relativ bane";
