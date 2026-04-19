@@ -7,6 +7,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusBarController = StatusBarController()
-        statusBarController.showSettings()
     }
 }

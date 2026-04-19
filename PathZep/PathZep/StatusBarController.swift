@@ -9,7 +9,13 @@ class StatusBarController {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "folder.badge.questionmark", accessibilityDescription: "PathZep")
+            // SF Symbol이 없는 환경 대비 — 텍스트 fallback
+            if let img = NSImage(systemSymbolName: "link", accessibilityDescription: "PathZep") {
+                img.isTemplate = true
+                button.image = img
+            } else {
+                button.title = "~/"
+            }
         }
 
         setupMenu()
