@@ -350,15 +350,34 @@ class ShortcutRecorderField: NSTextField {
         layer?.borderColor = NSColor.controlAccentColor.cgColor
     }
 
+    // Modifier-only key codes to ignore
+    private static let modifierKeyCodes: Set<UInt16> = [
+        54, 55,  // Right/Left Command
+        56, 60,  // Left/Right Shift
+        58, 61,  // Left/Right Option
+        59, 62,  // Left/Right Control
+        57,      // Caps Lock
+        63,      // fn
+    ]
+
     override func keyDown(with event: NSEvent) {
         guard isRecording else { return }
+
+        // Ignore modifier-only key presses
+        guard !Self.modifierKeyCodes.contains(event.keyCode) else { return }
 
         let mods = event.modifierFlags.intersection([.command, .option, .control, .shift])
 
         // Require at least one modifier
-        guard !mods.isEmpty else { return }
-        // Ignore standalone modifier keys
-        guard event.keyCode != 0xFF else { return }
+        guard !mods.isEmpty else {
+            // ESC cancels recording
+            if event.keyCode == 53 {
+                isRecording = false
+                stringValue = recordedShortcut.map { shortcutDisplayString(keyCode: $0.keyCode, modifiers: $0.modifiers) } ?? ""
+                layer?.borderColor = NSColor.separatorColor.cgColor
+            }
+            return
+        }
 
         let keyCode = UInt32(event.keyCode)
         setShortcut(keyCode: keyCode, modifiers: mods)
@@ -396,6 +415,28 @@ class ShortcutRecorderField: NSTextField {
         return parts.joined()
     }
 
+    /// ASCII 키보드 레이아웃(com.apple.keylayout.ABC)을 캐시해서 항상 영문 키 이름 반환
+    private static let asciiLayoutData: Data? = {
+        // 모든 입력 소스 중 ASCII-capable 키보드 레이아웃 찾기
+        let conditions: CFDictionary = [
+            kTISPropertyInputSourceCategory as String: kTISCategoryKeyboardInputSource as String,
+            kTISPropertyInputSourceIsASCIICapable as String: true
+        ] as CFDictionary
+
+        guard let sourceList = TISCreateInputSourceList(conditions, false)?.takeRetainedValue() as? [TISInputSource],
+              let asciiSource = sourceList.first(where: {
+                  let idRef = TISGetInputSourceProperty($0, kTISPropertyInputSourceID)
+                  if let id = unsafeBitCast(idRef, to: CFString?.self) as String? {
+                      return id == "com.apple.keylayout.ABC" || id == "com.apple.keylayout.US"
+                  }
+                  return false
+              }) ?? sourceList.first
+        else { return nil }
+
+        guard let layoutDataRef = TISGetInputSourceProperty(asciiSource, kTISPropertyUnicodeKeyLayoutData) else { return nil }
+        return unsafeBitCast(layoutDataRef, to: CFData.self) as Data
+    }()
+
     private func keyCodeToString(_ keyCode: UInt32) -> String {
         let specialKeys: [UInt32: String] = [
             36: "↩", 48: "⇥", 49: "Space", 51: "⌫", 53: "⎋",
@@ -408,11 +449,9 @@ class ShortcutRecorderField: NSTextField {
 
         if let name = specialKeys[keyCode] { return name }
 
-        let source = TISCopyCurrentKeyboardInputSource().takeRetainedValue()
-        let layoutDataRef = TISGetInputSourceProperty(source, kTISPropertyUnicodeKeyLayoutData)
-        guard let layoutData = layoutDataRef else { return "?" }
+        // 항상 ASCII(영문) 레이아웃으로 키 이름 변환
+        guard let data = Self.asciiLayoutData else { return "?" }
 
-        let data = unsafeBitCast(layoutData, to: CFData.self) as Data
         return data.withUnsafeBytes { rawPtr -> String in
             let ptr = rawPtr.bindMemory(to: UCKeyboardLayout.self).baseAddress!
             var deadKeyState: UInt32 = 0
