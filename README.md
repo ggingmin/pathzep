@@ -85,19 +85,18 @@ You can assign keyboard shortcuts in **System Settings → Keyboard → Keyboard
 
 <details>
 <summary>🌐 Available in 26 languages</summary>
-
 <br>
 
-| | | |
-|---|---|---|
-| **English** | [한국어](README.ko.md) | [日本語](README.ja.md) |
-| [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) |
-| [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) |
-| [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) |
-| [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) |
-| [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) |
-| [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) |
-| [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) |
-| [Bahasa Melayu](README.ms.md) | [עברית](README.he.md) | |
+<table>
+    <tr><td><b>English</b></td><td><a href="README.ko.md">한국어</a></td><td><a href="README.ja.md">日本語</a></td></tr>
+    <tr><td><a href="README.zh-Hans.md">简体中文</a></td><td><a href="README.zh-Hant.md">繁體中文</a></td><td><a href="README.es.md">Español</a></td></tr>
+    <tr><td><a href="README.fr.md">Français</a></td><td><a href="README.de.md">Deutsch</a></td><td><a href="README.pt-BR.md">Português</a></td></tr>
+    <tr><td><a href="README.ru.md">Русский</a></td><td><a href="README.ar.md">العربية</a></td><td><a href="README.hi.md">हिन्दी</a></td></tr>
+    <tr><td><a href="README.it.md">Italiano</a></td><td><a href="README.nl.md">Nederlands</a></td><td><a href="README.tr.md">Türkçe</a></td></tr>
+    <tr><td><a href="README.vi.md">Tiếng Việt</a></td><td><a href="README.th.md">ไทย</a></td><td><a href="README.id.md">Bahasa Indonesia</a></td></tr>
+    <tr><td><a href="README.pl.md">Polski</a></td><td><a href="README.uk.md">Українська</a></td><td><a href="README.sv.md">Svenska</a></td></tr>
+    <tr><td><a href="README.da.md">Dansk</a></td><td><a href="README.fi.md">Suomi</a></td><td><a href="README.nb.md">Norsk</a></td></tr>
+    <tr><td><a href="README.ms.md">Bahasa Melayu</a></td><td><a href="README.he.md">עברית</a></td><td></td></tr>
+</table>
 
 </details>
