@@ -31,18 +31,18 @@ def load_regular(size):
             except: continue
     return ImageFont.load_default()
 
-# 중앙 상단: 앱 이름
-name_font = load_mono(36)
+# 중앙 상단: 앱 이름 (bold + 크게)
+name_font = load_mono(48)
 name_bbox = draw.textbbox((0, 0), "~/", font=name_font)
 name_w = name_bbox[2] - name_bbox[0]
 tilde_color = (160, 130, 240)
-draw.text(((W - name_w) // 2, 70), "~/", fill=tilde_color, font=name_font)
+draw.text(((W - name_w) // 2, 55), "~/", fill=tilde_color, font=name_font)
 
-sub_font = load_regular(14)
+sub_font = load_mono(16)
 sub_text = "PathZep"
 sub_bbox = draw.textbbox((0, 0), sub_text, font=sub_font)
 sub_w = sub_bbox[2] - sub_bbox[0]
-draw.text(((W - sub_w) // 2, 118), sub_text, fill=(120, 125, 150), font=sub_font)
+draw.text(((W - sub_w) // 2, 115), sub_text, fill=(130, 135, 160), font=sub_font)
 
 # 구분선
 line_y = 155
@@ -63,7 +63,7 @@ draw.rounded_rectangle(
     [(icon_x, icon_y), (icon_x + icon_size, icon_y + icon_size)],
     radius=14, fill=icon_bg
 )
-icon_font = load_mono(28)
+icon_font = load_mono(32)
 icon_bbox = draw.textbbox((0, 0), "~/", font=icon_font)
 iw = icon_bbox[2] - icon_bbox[0]
 ih = icon_bbox[3] - icon_bbox[1]

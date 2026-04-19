@@ -9,7 +9,11 @@ class StatusBarController {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem.button {
-            button.title = "~/"
+            let attr = NSAttributedString(string: "~/", attributes: [
+                .font: NSFont.boldSystemFont(ofSize: 14),
+                .baselineOffset: -0.5
+            ])
+            button.attributedTitle = attr
         }
 
         setupMenu()

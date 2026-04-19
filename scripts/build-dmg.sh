@@ -23,6 +23,10 @@ SCHEME="PathZep"
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 
+# DMG 배경 이미지 생성
+echo "🎨 DMG 배경 이미지 생성 중..."
+python3 "$SCRIPT_DIR/generate_dmg_bg.py"
+
 echo "🔨 빌드 중..."
 xcodebuild \
     -project "$XCODE_PROJECT" \
@@ -44,27 +48,69 @@ echo "🔍 서명 확인..."
 codesign -dvv "$APP_PATH" 2>&1 | head -5 || true
 
 echo "💿 DMG 생성 중..."
+DMG_SIZE=8192  # 8MB (앱 + 배경 이미지)
 DMG_TEMP="$BUILD_DIR/dmg_temp"
+DMG_RW="$BUILD_DIR/${DMG_NAME}_rw.dmg"
 DMG_PATH="$BUILD_DIR/$DMG_NAME.dmg"
 rm -rf "$DMG_TEMP"
 mkdir -p "$DMG_TEMP"
 
-# .app을 DMG 임시 폴더에 복사
+# .app과 Applications 링크 복사
 cp -R "$APP_PATH" "$DMG_TEMP/"
-
-# Applications 심볼릭 링크 추가
 ln -s /Applications "$DMG_TEMP/Applications"
 
-# DMG 생성
+# 배경 이미지를 숨김 폴더에 복사
+mkdir -p "$DMG_TEMP/.background"
+cp "$BUILD_DIR/dmg_background.png" "$DMG_TEMP/.background/background.png"
+cp "$BUILD_DIR/dmg_background@2x.png" "$DMG_TEMP/.background/background@2x.png"
+
+# 쓰기 가능한 DMG 생성
 hdiutil create \
     -volname "$DMG_NAME" \
     -srcfolder "$DMG_TEMP" \
     -ov \
-    -format UDZO \
-    "$DMG_PATH" \
+    -format UDRW \
+    -size "${DMG_SIZE}k" \
+    "$DMG_RW" \
     2>&1 | tail -3
 
 rm -rf "$DMG_TEMP"
+
+# DMG 마운트 후 Finder 윈도우 설정 적용
+echo "🎨 DMG 레이아웃 설정 중..."
+MOUNT_DIR=$(hdiutil attach -readwrite -noverify -noautoopen "$DMG_RW" | grep "/Volumes/" | sed 's/.*\/Volumes/\/Volumes/')
+
+# Finder 윈도우 설정 (AppleScript)
+osascript <<EOF
+tell application "Finder"
+    tell disk "$DMG_NAME"
+        open
+        set current view of container window to icon view
+        set toolbar visible of container window to false
+        set statusbar visible of container window to false
+        set the bounds of container window to {200, 120, 860, 520}
+        set viewOptions to the icon view options of container window
+        set arrangement of viewOptions to not arranged
+        set icon size of viewOptions to 80
+        set background picture of viewOptions to file ".background:background.png"
+        set position of item "$APP_NAME.app" of container window to {160, 200}
+        set position of item "Applications" of container window to {500, 200}
+        close
+        open
+        update without registering applications
+        delay 2
+        close
+    end tell
+end tell
+EOF
+
+# 마운트 해제
+sync
+hdiutil detach "$MOUNT_DIR" 2>/dev/null || true
+
+# 읽기 전용 DMG로 변환
+hdiutil convert "$DMG_RW" -format UDZO -o "$DMG_PATH" 2>&1 | tail -3
+rm -f "$DMG_RW"
 
 echo ""
 echo "============================================"
