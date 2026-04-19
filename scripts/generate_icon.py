@@ -1,109 +1,51 @@
 #!/usr/bin/env python3
-"""Generate PathZep app icon at 1024x1024 using Pillow."""
+"""PathZep 앱 아이콘 생성 — ~/ 텍스트만"""
 
 from PIL import Image, ImageDraw, ImageFont
-import math
 import os
 
 SIZE = 1024
+OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "PathZep", "PathZep", "Assets.xcassets", "AppIcon.appiconset")
+
 img = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
 draw = ImageDraw.Draw(img)
 
-# === Background: rounded square with gradient-like effect ===
-# macOS icon shape: rounded rect with ~22% corner radius
-corner_r = int(SIZE * 0.22)
-margin = 2
+# ~/ 텍스트만 — 배경 없음
+font = None
+font_size = int(SIZE * 0.7)
+for font_path in [
+    "/System/Library/Fonts/SFMono-Bold.otf",
+    "/System/Library/Fonts/Supplemental/SF-Mono-Bold.otf",
+    "/System/Library/Fonts/Menlo.ttc",
+    "/System/Library/Fonts/Courier.dfont",
+]:
+    if os.path.exists(font_path):
+        try:
+            font = ImageFont.truetype(font_path, font_size)
+            break
+        except:
+            continue
 
-# Base fill — deep blue-purple gradient approximation
-# Draw concentric rounded rects from dark to lighter
-for i in range(SIZE // 2):
-    t = i / (SIZE / 2)
-    r = int(30 + t * 40)
-    g = int(60 + t * 80)
-    b = int(140 + t * 80)
-    inset = margin + i
-    if inset >= SIZE // 2:
-        break
-    cr = max(corner_r - i, 0)
-    draw.rounded_rectangle(
-        [inset, inset, SIZE - 1 - inset, SIZE - 1 - inset],
-        radius=cr,
-        fill=(r, g, b, 255),
-    )
+if font is None:
+    font = ImageFont.load_default()
 
-# === Draw a stylized "/" path symbol ===
-# The slash represents "path"
-cx, cy = SIZE // 2, SIZE // 2
+text = "~/"
+text_color = (30, 36, 60)  # 딥 네이비
 
-# Slash stroke
-slash_width = int(SIZE * 0.09)
-slash_height = int(SIZE * 0.48)
-slash_offset_x = int(SIZE * 0.12)
+bbox = draw.textbbox((0, 0), text, font=font)
+tw = bbox[2] - bbox[0]
+th = bbox[3] - bbox[1]
+tx = (SIZE - tw) // 2 - bbox[0]
+ty = (SIZE - th) // 2 - bbox[1]
 
-# Points for "/" shape (parallelogram)
-x1 = cx + slash_offset_x  # bottom right
-y1 = cy + slash_height // 2
-x2 = cx - slash_offset_x  # top left
-y2 = cy - slash_height // 2
+draw.text((tx, ty), text, fill=text_color, font=font)
 
-# Draw thick anti-aliased slash using polygon
-half_w = slash_width // 2
-slash_points = [
-    (x1 - half_w, y1),
-    (x1 + half_w, y1),
-    (x2 + half_w, y2),
-    (x2 - half_w, y2),
-]
-draw.polygon(slash_points, fill=(255, 255, 255, 240))
+os.makedirs(OUT_DIR, exist_ok=True)
 
-# === Draw "~" tilde above the slash ===
-# Represents the relative path ~/
-tilde_y = cy - slash_height // 2 - int(SIZE * 0.06)
-tilde_cx = cx
-tilde_w = int(SIZE * 0.28)
-tilde_h = int(SIZE * 0.06)
-tilde_thick = int(SIZE * 0.035)
-
-# Draw tilde as a sine wave
-points_top = []
-points_bot = []
-steps = 60
-for i in range(steps + 1):
-    t = i / steps
-    x = tilde_cx - tilde_w // 2 + int(t * tilde_w)
-    y_offset = math.sin(t * math.pi * 2) * tilde_h
-    points_top.append((x, int(tilde_y + y_offset - tilde_thick // 2)))
-    points_bot.append((x, int(tilde_y + y_offset + tilde_thick // 2)))
-
-# Combine into a closed polygon (top edge + reversed bottom edge)
-tilde_poly = points_top + list(reversed(points_bot))
-draw.polygon(tilde_poly, fill=(120, 220, 255, 230))
-
-# === Draw small dots for "..." path separator ===
-dot_r = int(SIZE * 0.022)
-dot_y = cy + slash_height // 2 + int(SIZE * 0.08)
-dot_spacing = int(SIZE * 0.07)
-for i in range(-1, 2):
-    dx = cx + i * dot_spacing
-    draw.ellipse(
-        [dx - dot_r, dot_y - dot_r, dx + dot_r, dot_y + dot_r],
-        fill=(180, 210, 255, 200),
-    )
-
-# === Save ===
-out_dir = os.path.join(os.path.dirname(__file__), "..", "PathZep", "PathZep", "Assets.xcassets", "AppIcon.appiconset")
-os.makedirs(out_dir, exist_ok=True)
-
-master_path = os.path.join(out_dir, "icon_1024x1024.png")
-img.save(master_path, "PNG")
-print(f"Saved master icon: {master_path}")
-
-# Generate all required sizes
-sizes = [16, 32, 64, 128, 256, 512, 1024]
+sizes = [1024, 512, 256, 128, 64, 32, 16]
 for s in sizes:
     resized = img.resize((s, s), Image.LANCZOS)
-    filename = f"icon_{s}x{s}.png"
-    resized.save(os.path.join(out_dir, filename), "PNG")
-    print(f"  Generated {filename}")
+    resized.save(os.path.join(OUT_DIR, f"icon_{s}x{s}.png"))
+    print(f"  ✓ {s}x{s}")
 
-print("\nDone! All icon sizes generated.")
+print(f"\n✅ 아이콘 생성 완료: {OUT_DIR}")
