@@ -1,10 +1,14 @@
-**English** | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
-
 # PathZep `~/`
 
-Copy file and folder paths from Finder to your clipboard — instantly.
+> Copy file and folder paths from Finder to your clipboard — instantly.
 
 A lightweight, native macOS utility that adds **right-click context menu** and **global keyboard shortcuts** for copying absolute or home-relative (`~/`) paths.
+
+[![Download](https://img.shields.io/github/v/release/ggingmin/pathzep?label=Download&style=flat-square)](https://github.com/ggingmin/pathzep/releases/latest)
+[![License](https://img.shields.io/github/license/ggingmin/pathzep?style=flat-square)](LICENSE)
+[![macOS](https://img.shields.io/badge/macOS-12%2B-blue?style=flat-square)](#requirements)
+
+---
 
 ## Features
 
@@ -19,7 +23,7 @@ A lightweight, native macOS utility that adds **right-click context menu** and *
 
 ### Download (recommended)
 
-1. Download the latest DMG from [Releases](https://github.com/ggingmin/pathzep/releases/latest)
+1. Download the latest DMG from [**Releases**](https://github.com/ggingmin/pathzep/releases/latest)
 2. Open the DMG and drag **PathZep.app** to **Applications**
 3. Launch PathZep
 4. Enable the Finder extension:  
@@ -76,3 +80,24 @@ You can assign keyboard shortcuts in **System Settings → Keyboard → Keyboard
 ## License
 
 [MIT](LICENSE)
+
+---
+
+<details>
+<summary>🌐 Available in 26 languages</summary>
+
+<br>
+
+| | | |
+|---|---|---|
+| **English** | [한국어](README.ko.md) | [日本語](README.ja.md) |
+| [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) |
+| [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) |
+| [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) |
+| [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) |
+| [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) |
+| [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) |
+| [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) |
+| [Bahasa Melayu](README.ms.md) | [עברית](README.he.md) | |
+
+</details>

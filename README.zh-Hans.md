@@ -1,5 +1,3 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | **简体中文** | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
-
 # PathZep `~/`
 
 从 Finder 复制文件和文件夹路径到剪贴板 — 即时完成。
@@ -76,3 +74,24 @@ Quick Actions 显示在 Finder 的**右键 → 快速操作**中。
 ## 许可证
 
 [MIT](LICENSE)
+
+---
+
+<details>
+<summary>🌐 Available in 26 languages</summary>
+
+<br>
+
+| | | |
+|---|---|---|
+| [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) |
+| **简体中文** | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) |
+| [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) |
+| [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) |
+| [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) |
+| [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) |
+| [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) |
+| [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) |
+| [Bahasa Melayu](README.ms.md) | [עברית](README.he.md) |  |
+
+</details>

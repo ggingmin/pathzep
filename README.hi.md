@@ -1,5 +1,3 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | **हिन्दी** | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
-
 # PathZep `~/`
 
 Finder से फ़ाइल और फ़ोल्डर पथ अपने क्लिपबोर्ड पर कॉपी करें — तुरंत।
@@ -76,3 +74,24 @@ Quick Actions Finder में **राइट-क्लिक → Quick Actions*
 ## लाइसेंस
 
 [MIT](LICENSE)
+
+---
+
+<details>
+<summary>🌐 Available in 26 languages</summary>
+
+<br>
+
+| | | |
+|---|---|---|
+| [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) |
+| [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) |
+| [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) |
+| [Русский](README.ru.md) | [العربية](README.ar.md) | **हिन्दी** |
+| [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Türkçe](README.tr.md) |
+| [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) |
+| [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) |
+| [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) |
+| [Bahasa Melayu](README.ms.md) | [עברית](README.he.md) |  |
+
+</details>

@@ -1,5 +1,3 @@
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | **Türkçe** | [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) | [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) | [Bahasa Melayu](README.ms.md) | [עברית](README.he.md)
-
 # PathZep `~/`
 
 Finder'dan dosya ve klasör yollarını panonuza kopyalayın — anında.
@@ -76,3 +74,24 @@ Quick Actions, Finder'da **sağ tıklama → Hızlı Eylemler** altında görün
 ## Lisans
 
 [MIT](LICENSE)
+
+---
+
+<details>
+<summary>🌐 Available in 26 languages</summary>
+
+<br>
+
+| | | |
+|---|---|---|
+| [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) |
+| [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Español](README.es.md) |
+| [Français](README.fr.md) | [Deutsch](README.de.md) | [Português](README.pt-BR.md) |
+| [Русский](README.ru.md) | [العربية](README.ar.md) | [हिन्दी](README.hi.md) |
+| [Italiano](README.it.md) | [Nederlands](README.nl.md) | **Türkçe** |
+| [Tiếng Việt](README.vi.md) | [ไทย](README.th.md) | [Bahasa Indonesia](README.id.md) |
+| [Polski](README.pl.md) | [Українська](README.uk.md) | [Svenska](README.sv.md) |
+| [Dansk](README.da.md) | [Suomi](README.fi.md) | [Norsk](README.nb.md) |
+| [Bahasa Melayu](README.ms.md) | [עברית](README.he.md) |  |
+
+</details>
