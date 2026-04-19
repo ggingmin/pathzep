@@ -1,130 +1,124 @@
 #!/usr/bin/env python3
-"""PathZep DMG 배경 이미지 생성 — 심플 스타일"""
+"""PathZep DMG 배경 — SVG 생성 후 macOS 내장 렌더러(Swift)로 PNG 변환"""
+import os, subprocess, tempfile
 
-from PIL import Image, ImageDraw, ImageFont
-import os
+W, H = 660, 440
 
-W, H = 660, 400
-img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-draw = ImageDraw.Draw(img)
+svg = f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
+  <defs>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B6FE0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#7C5CD8;stop-opacity:0.85"/>
+    </linearGradient>
+    <marker id="arrowHead" markerWidth="14" markerHeight="12" refX="13" refY="6"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0.5 L 13 6 L 0 11.5 Q 3 6 0 0.5 Z" fill="#7C5CD8" opacity="0.85"/>
+    </marker>
+  </defs>
 
-# 배경: 깔끔한 다크
-bg = (28, 30, 38)
-draw.rectangle([(0, 0), (W, H)], fill=bg)
+  <!-- 흰색 배경 -->
+  <rect width="{W}" height="{H}" fill="#FFFFFF"/>
 
-# 폰트
-def load_mono(size):
-    for p in ["/System/Library/Fonts/SFMono-Bold.otf",
-              "/System/Library/Fonts/Supplemental/SF-Mono-Bold.otf",
-              "/System/Library/Fonts/Menlo.ttc"]:
-        if os.path.exists(p):
-            try: return ImageFont.truetype(p, size)
-            except: continue
-    return ImageFont.load_default()
+  <!-- ~/ 로고 -->
+  <text x="{W//2}" y="78" text-anchor="middle"
+        font-family="Menlo, SF Mono, monospace" font-weight="900" font-size="54"
+        fill="#5838C8">~/</text>
 
-def load_regular(size):
-    for p in ["/System/Library/Fonts/SFMono-Regular.otf",
-              "/System/Library/Fonts/Supplemental/SF-Mono-Regular.otf",
-              "/System/Library/Fonts/Menlo.ttc"]:
-        if os.path.exists(p):
-            try: return ImageFont.truetype(p, size)
-            except: continue
-    return ImageFont.load_default()
+  <!-- PathZep -->
+  <text x="{W//2}" y="110" text-anchor="middle"
+        font-family="Menlo, monospace" font-weight="bold" font-size="15"
+        fill="#8C8C9B">PathZep</text>
 
-# 중앙 상단: 앱 이름 (bold + 크게)
-name_font = load_mono(48)
-name_bbox = draw.textbbox((0, 0), "~/", font=name_font)
-name_w = name_bbox[2] - name_bbox[0]
-tilde_color = (160, 130, 240)
-draw.text(((W - name_w) // 2, 55), "~/", fill=tilde_color, font=name_font)
+  <!-- 구분선 -->
+  <line x1="{W//2 - 55}" y1="130" x2="{W//2 + 55}" y2="130"
+        stroke="#E0E0E8" stroke-width="1"/>
 
-sub_font = load_mono(16)
-sub_text = "PathZep"
-sub_bbox = draw.textbbox((0, 0), sub_text, font=sub_font)
-sub_w = sub_bbox[2] - sub_bbox[0]
-draw.text(((W - sub_w) // 2, 115), sub_text, fill=(130, 135, 160), font=sub_font)
+  <!-- 곡선 화살표: 앱 아이콘(160,220) → Applications(500,220), 아이콘 80px -->
+  <path d="M 205 260 C 270 210, 390 210, 455 260"
+        fill="none" stroke="url(#arrowGrad)" stroke-width="2.5"
+        stroke-linecap="round" marker-end="url(#arrowHead)"/>
 
-# 구분선
-line_y = 155
-line_color = (50, 55, 70)
-draw.line([(W // 2 - 80, line_y), (W // 2 + 80, line_y)], fill=line_color, width=1)
+  <!-- Drag to install — 아치 선 위 -->
+  <text x="{W//2}" y="200" text-anchor="middle"
+        font-family="Helvetica Neue, -apple-system, sans-serif" font-weight="400" font-size="12"
+        fill="#AAAAB8">Drag to install</text>
+</svg>'''
 
-# 하단: 드래그 안내 영역
-guide_y = 210
-
-# 왼쪽: 앱 아이콘 자리 (그라데이션 사각 + ~/ 텍스트)
-icon_size = 72
-icon_x = W // 2 - 130 - icon_size // 2
-icon_y = guide_y
-
-# 아이콘 배경
-icon_bg = (60, 70, 130)
-draw.rounded_rectangle(
-    [(icon_x, icon_y), (icon_x + icon_size, icon_y + icon_size)],
-    radius=14, fill=icon_bg
-)
-icon_font = load_mono(32)
-icon_bbox = draw.textbbox((0, 0), "~/", font=icon_font)
-iw = icon_bbox[2] - icon_bbox[0]
-ih = icon_bbox[3] - icon_bbox[1]
-draw.text((icon_x + (icon_size - iw) // 2, icon_y + (icon_size - ih) // 2 - 2),
-          "~/", fill=(220, 220, 240), font=icon_font)
-
-# 앱 이름 라벨
-label_font = load_regular(11)
-label_text = "PathZep.app"
-label_bbox = draw.textbbox((0, 0), label_text, font=label_font)
-lw = label_bbox[2] - label_bbox[0]
-draw.text((icon_x + (icon_size - lw) // 2, icon_y + icon_size + 8),
-          label_text, fill=(110, 115, 140), font=label_font)
-
-# 화살표
-arrow_y = icon_y + icon_size // 2
-ax_start = icon_x + icon_size + 24
-ax_end = W // 2 + 130 - icon_size // 2 - 24
-arrow_color = (90, 100, 150)
-for x in range(ax_start, ax_end, 12):
-    draw.rounded_rectangle([(x, arrow_y - 1), (x + 6, arrow_y + 2)], radius=1, fill=arrow_color)
-# 화살표 머리
-draw.polygon([
-    (ax_end + 2, arrow_y - 5),
-    (ax_end + 10, arrow_y),
-    (ax_end + 2, arrow_y + 6)
-], fill=arrow_color)
-
-# 오른쪽: Applications 폴더
-folder_x = W // 2 + 130 - icon_size // 2
-folder_y = guide_y
-folder_color = (70, 130, 230)
-draw.rounded_rectangle(
-    [(folder_x, folder_y + 10), (folder_x + icon_size, folder_y + icon_size)],
-    radius=8, fill=folder_color
-)
-draw.rounded_rectangle(
-    [(folder_x, folder_y + 4), (folder_x + 30, folder_y + 16)],
-    radius=5, fill=folder_color
-)
-
-folder_label = "Applications"
-fl_bbox = draw.textbbox((0, 0), folder_label, font=label_font)
-fl_w = fl_bbox[2] - fl_bbox[0]
-draw.text((folder_x + (icon_size - fl_w) // 2, folder_y + icon_size + 8),
-          folder_label, fill=(110, 115, 140), font=label_font)
-
-# 하단 슬로건
-slogan_font = load_regular(12)
-slogan = "Drag to install"
-sl_bbox = draw.textbbox((0, 0), slogan, font=slogan_font)
-sl_w = sl_bbox[2] - sl_bbox[0]
-draw.text(((W - sl_w) // 2, H - 45), slogan, fill=(80, 85, 110), font=slogan_font)
-
-# 저장
 out_dir = os.path.join(os.path.dirname(__file__), "..", "build")
 os.makedirs(out_dir, exist_ok=True)
-out_path = os.path.join(out_dir, "dmg_background.png")
-img.save(out_path)
 
-img_2x = img.resize((W * 2, H * 2), Image.LANCZOS)
-img_2x.save(os.path.join(out_dir, "dmg_background@2x.png"))
+# SVG 임시 파일 저장
+svg_path = os.path.join(out_dir, "dmg_background.svg")
+with open(svg_path, "w") as f:
+    f.write(svg)
 
-print(f"✅ DMG 배경 생성: {out_path}")
+# Swift 스크립트로 SVG → PNG 렌더링 (macOS 내장 WebKit/CoreGraphics)
+swift_code = r'''
+import Foundation
+import AppKit
+
+let args = CommandLine.arguments
+guard args.count >= 5 else {
+    print("Usage: render <svg_path> <png_1x> <png_2x> <scale>")
+    exit(1)
+}
+
+let svgPath = args[1]
+let png1x = args[2]
+let png2x = args[3]
+
+guard let svgData = FileManager.default.contents(atPath: svgPath) else {
+    print("Cannot read SVG"); exit(1)
+}
+
+// NSImage can render SVG natively on macOS 12+
+guard let svgImage = NSImage(data: svgData) else {
+    print("Cannot parse SVG"); exit(1)
+}
+
+func renderPNG(image: NSImage, width: Int, height: Int, path: String) {
+    let rep = NSBitmapImageRep(
+        bitmapDataPlanes: nil,
+        pixelsWide: width, pixelsHigh: height,
+        bitsPerSample: 8, samplesPerPixel: 4,
+        hasAlpha: true, isPlanar: false,
+        colorSpaceName: .deviceRGB,
+        bytesPerRow: 0, bitsPerPixel: 0
+    )!
+    rep.size = NSSize(width: width, height: height)
+
+    NSGraphicsContext.saveGraphicsState()
+    NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
+    image.draw(in: NSRect(x: 0, y: 0, width: width, height: height))
+    NSGraphicsContext.restoreGraphicsState()
+
+    let pngData = rep.representation(using: .png, properties: [:])!
+    try! pngData.write(to: URL(fileURLWithPath: path))
+}
+
+renderPNG(image: svgImage, width: 660, height: 440, path: png1x)
+renderPNG(image: svgImage, width: 1320, height: 880, path: png2x)
+print("OK")
+'''
+
+swift_path = os.path.join(out_dir, "_render.swift")
+with open(swift_path, "w") as f:
+    f.write(swift_code)
+
+png_1x = os.path.join(out_dir, "dmg_background.png")
+png_2x = os.path.join(out_dir, "dmg_background@2x.png")
+
+result = subprocess.run(
+    ["swift", swift_path, svg_path, png_1x, png_2x, "2"],
+    capture_output=True, text=True, timeout=30
+)
+
+if result.returncode != 0:
+    print(f"Swift render failed: {result.stderr}")
+    exit(1)
+
+# 임시 파일 정리
+os.remove(swift_path)
+
+print(f"✅ DMG 배경 생성: {png_1x}")

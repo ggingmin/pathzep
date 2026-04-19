@@ -59,10 +59,10 @@ mkdir -p "$DMG_TEMP"
 cp -R "$APP_PATH" "$DMG_TEMP/"
 ln -s /Applications "$DMG_TEMP/Applications"
 
-# 배경 이미지를 숨김 폴더에 복사
-mkdir -p "$DMG_TEMP/.background"
-cp "$BUILD_DIR/dmg_background.png" "$DMG_TEMP/.background/background.png"
-cp "$BUILD_DIR/dmg_background@2x.png" "$DMG_TEMP/.background/background@2x.png"
+# 배경 이미지를 앱 번들 안에 숨겨서 볼륨 루트에 별도 파일이 안 보이게 함
+mkdir -p "$DMG_TEMP/$APP_NAME.app/Contents/Resources/.bg"
+cp "$BUILD_DIR/dmg_background.png" "$DMG_TEMP/$APP_NAME.app/Contents/Resources/.bg/background.png"
+cp "$BUILD_DIR/dmg_background@2x.png" "$DMG_TEMP/$APP_NAME.app/Contents/Resources/.bg/background@2x.png"
 
 # 쓰기 가능한 DMG 생성
 hdiutil create \
@@ -88,13 +88,13 @@ tell application "Finder"
         set current view of container window to icon view
         set toolbar visible of container window to false
         set statusbar visible of container window to false
-        set the bounds of container window to {200, 120, 860, 520}
+        set the bounds of container window to {200, 100, 860, 540}
         set viewOptions to the icon view options of container window
         set arrangement of viewOptions to not arranged
         set icon size of viewOptions to 80
-        set background picture of viewOptions to file ".background:background.png"
-        set position of item "$APP_NAME.app" of container window to {160, 200}
-        set position of item "Applications" of container window to {500, 200}
+        set background picture of viewOptions to file "PathZep.app:Contents:Resources:.bg:background.png"
+        set position of item "$APP_NAME.app" of container window to {160, 220}
+        set position of item "Applications" of container window to {500, 220}
         close
         open
         update without registering applications
@@ -103,6 +103,9 @@ tell application "Finder"
     end tell
 end tell
 EOF
+
+# 불필요한 메타데이터 정리
+rm -rf "$MOUNT_DIR/.fseventsd" "$MOUNT_DIR/.Trashes"
 
 # 마운트 해제
 sync
